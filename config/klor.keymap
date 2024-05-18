@@ -1,0 +1,177 @@
+
+//                               █         █    █            ▄▄▄▀▀▀▀▀▀▄▄▄        █▀▀▀▀▀▀▀▀▀▀█
+//                               █        █     █          ▄▀            ▀▄      █          █
+//                               █       █      █        ▄▀                ▀▄    █          █
+//                               █      █       █        █                  █    █          █
+//                               █     █        █       █                    █   █          █
+//                               █    █         █       █                    █   █▄▄▄▄▄▄▄▄▄▄█
+//                               █   █ █        █       █                    █   █      █
+//                               █  █   █       █        █                  █    █       █
+//                               █ █     █      █        ▀▄                ▄▀    █        █
+//                               ██       █     █          ▀▄            ▄▀      █         █
+//                               █         █    █▄▄▄▄▄▄▄▄    ▀▀▀▄▄▄▄▄▄▀▀▀        █          █
+//
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+       
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/backlight.h>
+
+#define DEFAULT 0
+#define RAISE   1
+#define NAVIG   2
+#define FUNCT   3
+
+#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+
+
+/ {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings =
+                <&kp>,
+                <&kp>;
+        };
+mo_tog: behavior_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            label = "mo_tog";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&tog>;
+        };
+       rgb_brightness: rgb_brightness {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "RGB_BRIGHTNESS";
+            #sensor-binding-cells = <0>;
+            bindings = <&rgb_ug RGB_BRD>, <&rgb_ug RGB_BRI>;
+        };
+
+      rgb_hue: rgb_hue {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "RGB_HUE";
+            #sensor-binding-cells = <0>;
+            bindings = <&rgb_ug RGB_HUI>, <&rgb_ug RGB_HUD>;
+        };
+
+      rgb_saturation: rgb_saturation {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "RGB_SATURATION";
+            #sensor-binding-cells = <0>;
+            bindings = <&rgb_ug RGB_SAD>, <&rgb_ug RGB_SAI>;
+        };
+      bt_sel: bt_sel {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "BT_SEL";
+            #sensor-binding-cells = <0>;
+            bindings = <&bt BT_NXT>, <&bt BT_PRV>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+
+/*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+             │    Q    │    W    │    E    │    R    │    T    │                    │    Y    │    U    │    I    │    O    │    P    │   
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │   SHFT  │    A    │    S    │    D    │    F    │    G    │                    │    H    │    J    │    K    │    L    │    ;    │    "    │
+   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+   │   CTRL  │    Z    │    X    │    C    │    V    │    B    ││  MUTE  ││PLY/PSE ││    N    │    M    │    ,    │    .    │    /?   │ CMD/WIN │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │  BSPC    │  DEL   │  (2)    │   ALT   ││   (3)   │  ENTER  │  SPACE  │   (1)   │  
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
+ bindings = <
+ //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
+                &kp Q     &kp W     &kp E     &kp R     &kp T                          &kp Y     &kp U     &kp I     &kp O     &kp P
+    &kp LSHIFT  &kp A     &kp S     &kp D     &kp F     &kp G                          &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
+    &kp LCTRL   &kp Z     &kp X     &kp C     &kp V     &kp B     &bootloader     &bootloader    &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH &kp RWIN
+                                 &kp BSPC &kp DEL  MO_TOG(2) &kp LALT   MO_TOG(3)  &kp RET   &kp SPACE MO_TOG(1)   
+                        >;
+            sensor-bindings = <&bt_sel &inc_dec_kp C_VOL_UP C_VOL_DN>;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+                raise_layer {
+
+/*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+             │    1    │    2    │    3    │    4    │    5    │                    │    6    │    7    │    8    │    9    │    0    │
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │  SCAPS  │         │         │         │         │         │                    │    `    │         │         │    [    │    ]    │    =    │
+   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+   │   ESC   │         │         │         │         │         ││        ││        ││         │         │         │         │   \ |   │    -    │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │         │         │         │         ││   (0)   │         │         │         │  
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
+ bindings = <
+ //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
+               &kp N1   &kp N2    &kp N3    &kp N4   &kp N5                            &kp N6   &kp N7    &kp N8    &kp N9    &kp N0
+    &mt LSHIFT CLCK  &trans    &trans  &trans  &trans &trans                           &kp GRAVE &trans    &trans  &kp LBKT &kp RBKT    &kp EQUAL
+    &kp ESC    &trans   &trans     &trans    &trans   &trans      &trans    &trans     &trans   &trans    &trans    &trans   &kp BSLH  &kp MINUS
+                                  &trans    &trans    &trans    &trans     &to 0      &trans   &trans    &trans 
+                        >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+                navig_layer {
+
+/*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+             │         │         │         │         │         │                    │         │   PgUp  │    UP   │         │         │
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │         │         │         │         │         │         │                    │   Home  │   LEFT  │   DOWN  │  Right  │    End  │         │
+   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+   │   CAD   │         │         │         │         │         ││        ││        ││         │   PgDn  │         │         │         │         │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │         │         │   (0)   │   (3)   ││   (0)   │         │   TAB   │         │  
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
+ bindings = <
+ //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
+               &trans    &trans     &trans    &trans    &trans                       &trans   &kp PG_UP   &kp UP   &trans    &trans     
+    &trans &trans    &trans &trans    &trans    &trans                               &kp HOME   &kp LEFT  &kp DOWN  &kp RIGHT &kp END  &trans  
+    &kp LC(LA(DELETE)) &trans &trans &trans  &trans    &trans    &trans     &trans   &trans &kp PAGE_DOWN  &trans   &trans   &trans    &trans
+                                  &trans &trans   &to 0   &to 3   &to 0  &trans    &kp TAB    &trans  
+                        >;
+                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+                funct_layer {
+
+/*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+             │   F1    │    F2   │    F3   │    F4   │    F5   │                    │   F6    │    F7   │   F8    │   F9    │   F10   │
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │         │         │         │ BT_CLR  | BT_PRV  │ BT_NXT  │                    │         │         │         │         │   F11   │         │
+   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+   │         │         │         │         │         │         ││  boot  ││  boot  |│ RGB Y/N │ RGB Eff │         │         │   F12   │   (0)   |
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │         │         │         │   (0)   ││   (0)   │         │         │         │  
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
+ bindings = <
+ //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
+               &kp F1    &kp F2    &kp F3    &kp F4     &kp F5                        &kp F6    &kp F7     &kp F8    &kp F9   &kp F10   
+    &trans     &trans    &trans    &bt BT_CLR &bt BT_PRV &bt BT_NXT                   &rgb_ug RGB_BRD   &rgb_ug RGB_BRI    &trans    &trans    &kp F11    &trans 
+    &trans     &trans    &trans    &trans    &trans   &trans &bootloader  &bootloader  &rgb_ug RGB_TOG &rgb_ug RGB_EFF &trans &trans &kp F12 &to 0    
+                                   &trans  &trans     &trans &to 0     &to 0    &rgb_ug RGB_SAD   &rgb_ug RGB_SAI    &trans    
+                        >;
+            sensor-bindings = <&rgb_hue &rgb_brightness>;
+                };
+        };
+};
