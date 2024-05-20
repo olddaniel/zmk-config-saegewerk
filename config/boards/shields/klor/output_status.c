@@ -40,14 +40,16 @@ static bool style_initialized = false;
 
 K_MUTEX_DEFINE(output_status_mutex);
 
-struct output_status_state {
+struct output_status_state
+{
     enum zmk_endpoint selected_endpoint;
     bool active_profile_connected;
     bool active_profile_bonded;
     uint8_t active_profile_index;
 };
 
-static struct output_status_state get_state(const zmk_event_t *_eh) {
+static struct output_status_state get_state(const zmk_event_t *_eh)
+{
     return (struct output_status_state){.selected_endpoint = zmk_endpoints_selected(),
                                         .active_profile_connected =
                                             zmk_ble_active_profile_is_connected(),
@@ -56,32 +58,41 @@ static struct output_status_state get_state(const zmk_event_t *_eh) {
     ;
 }
 
-static void set_status_symbol(lv_obj_t *icon, struct output_status_state state) {
+static void set_status_symbol(lv_obj_t *icon, struct output_status_state state)
+{
     // char text[9] = {};
 
     k_mutex_lock(&output_status_mutex, K_FOREVER);
 
-    switch (state.selected_endpoint) {
+    switch (state.selected_endpoint)
+    {
     case ZMK_ENDPOINT_USB:
         lv_img_set_src(icon, &usb_out);
         break;
     case ZMK_ENDPOINT_BLE:
-        if (state.active_profile_bonded) {
-            if (state.active_profile_connected) {
+        if (state.active_profile_bonded)
+        {
+            if (state.active_profile_connected)
+            {
                 lv_img_set_src(icon, &bt_out_ok);
-            } else {
+            }
+            else
+            {
                 lv_img_set_src(icon, &bt_out_nc);
             }
-        } else {
+        }
+        else
+        {
             lv_img_set_src(icon, &bt_out_search);
         }
         break;
     }
 
-   k_mutex_unlock(&output_status_mutex); 
+    k_mutex_unlock(&output_status_mutex);
 }
 
-static void output_status_update_cb(struct output_status_state state) {
+static void output_status_update_cb(struct output_status_state state)
+{
     struct zmk_widget_output_status *widget;
     SYS_SLIST_FOR_EACH_CONTAINER(&widgets, widget, node) { set_status_symbol(widget->obj, state); }
 }
@@ -97,12 +108,13 @@ ZMK_SUBSCRIPTION(widget_output_status, zmk_usb_conn_state_changed);
 ZMK_SUBSCRIPTION(widget_output_status, zmk_ble_active_profile_changed);
 #endif
 
-int zmk_widget_output_status_init(struct zmk_widget_output_status *widget, lv_obj_t *parent) {
+int zmk_widget_output_status_init(struct zmk_widget_output_status *widget, lv_obj_t *parent)
+{
     widget->obj = lv_img_create(parent, NULL);
 
     lv_obj_add_style(widget->obj, LV_LABEL_PART_MAIN, &label_style);
 
-    //set_status_symbol(widget->obj, output_status_state);
+    // set_status_symbol(widget->obj, output_status_state);
 
     sys_slist_append(&widgets, &widget->node);
 
@@ -110,6 +122,7 @@ int zmk_widget_output_status_init(struct zmk_widget_output_status *widget, lv_ob
     return 0;
 }
 
-lv_obj_t *zmk_widget_output_status_obj(struct zmk_widget_output_status *widget) {
+lv_obj_t *zmk_widget_output_status_obj(struct zmk_widget_output_status *widget)
+{
     return widget->obj;
 }

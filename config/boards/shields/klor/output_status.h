@@ -9,7 +9,8 @@
 #include <lvgl.h>
 #include <kernel.h>
 
-struct zmk_widget_output_status {
+struct zmk_widget_output_status
+{
     sys_snode_t node;
     lv_obj_t *obj;
 };

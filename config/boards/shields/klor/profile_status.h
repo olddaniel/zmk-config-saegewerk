@@ -9,7 +9,8 @@
 #include <lvgl.h>
 #include <kernel.h>
 
-struct custom_widget_profile_status {
+struct custom_widget_profile_status
+{
     sys_snode_t node;
     lv_obj_t *obj;
 };

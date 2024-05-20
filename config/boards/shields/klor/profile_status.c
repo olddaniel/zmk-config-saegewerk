@@ -33,7 +33,8 @@ static bool style_initialized = false;
 
 K_MUTEX_DEFINE(profile_status_mutex);
 
-struct profile_status_state {
+struct profile_status_state
+{
     /*
     enum zmk_endpoint selected_endpoint;
     bool active_profile_connected;
@@ -42,7 +43,8 @@ struct profile_status_state {
     uint8_t active_profile_index;
 };
 
-static struct profile_status_state get_state(const zmk_event_t *_eh) {
+static struct profile_status_state get_state(const zmk_event_t *_eh)
+{
     return (struct profile_status_state){
         /*
         .selected_endpoint = zmk_endpoints_selected(),
@@ -53,12 +55,14 @@ static struct profile_status_state get_state(const zmk_event_t *_eh) {
     ;
 }
 
-static void set_profile_status_symbol(lv_obj_t *icon, struct profile_status_state state) {
+static void set_profile_status_symbol(lv_obj_t *icon, struct profile_status_state state)
+{
     // char text[9] = {};
 
     k_mutex_lock(&profile_status_mutex, K_FOREVER);
 
-    switch (state.active_profile_index) {
+    switch (state.active_profile_index)
+    {
     case 0:
         lv_img_set_src(icon, &bt_pro_0);
         break;
@@ -76,19 +80,18 @@ static void set_profile_status_symbol(lv_obj_t *icon, struct profile_status_stat
         break;
     }
 
-   k_mutex_unlock(&profile_status_mutex); 
+    k_mutex_unlock(&profile_status_mutex);
 }
 
-static void profile_status_update_cb(struct profile_status_state state) {
+static void profile_status_update_cb(struct profile_status_state state)
+{
     struct custom_widget_profile_status *widget;
     SYS_SLIST_FOR_EACH_CONTAINER(&widgets, widget, node) { set_profile_status_symbol(widget->obj, state); }
 }
 
-
 ZMK_DISPLAY_WIDGET_LISTENER(widget_profile_status, struct profile_status_state,
                             profile_status_update_cb, get_state)
 ZMK_SUBSCRIPTION(widget_profile_status, zmk_endpoint_selection_changed);
-
 
 #if defined(CONFIG_USB)
 ZMK_SUBSCRIPTION(widget_profile_status, zmk_usb_conn_state_changed);
@@ -97,8 +100,8 @@ ZMK_SUBSCRIPTION(widget_profile_status, zmk_usb_conn_state_changed);
 ZMK_SUBSCRIPTION(widget_profile_status, zmk_ble_active_profile_changed);
 #endif
 
-
-int custom_widget_profile_status_init(struct custom_widget_profile_status *widget, lv_obj_t *parent) {
+int custom_widget_profile_status_init(struct custom_widget_profile_status *widget, lv_obj_t *parent)
+{
     widget->obj = lv_img_create(parent, NULL);
 
     lv_obj_add_style(widget->obj, LV_LABEL_PART_MAIN, &label_style);
@@ -109,6 +112,7 @@ int custom_widget_profile_status_init(struct custom_widget_profile_status *widge
     return 0;
 }
 
-lv_obj_t *custom_widget_profile_status_obj(struct custom_widget_profile_status *widget) {
+lv_obj_t *custom_widget_profile_status_obj(struct custom_widget_profile_status *widget)
+{
     return widget->obj;
 }
