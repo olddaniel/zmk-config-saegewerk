@@ -357,7 +357,7 @@
                                                &super_shift          &lt 3 TAB                    &backspace_delete  &trans            &trans       &kp ENTER              &kp SPACE        &kp ESC
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RGB_BRI RGB_BRD>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
             label = "ENGRAM";
         };
 
