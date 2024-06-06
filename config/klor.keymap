@@ -353,7 +353,7 @@
             bindings = <
         &B_Ampersand            &kp Y          &o_masculine_ordinal  &U_underscore                &kp Z                                            &kp J                  &kp L            &kp D                &kp W          &kp Q
 &trans  &accents_C_Cedilha 1 0  &alt_i_pipe    &hm LEFT_COMMAND E    &control_A_feminine_ordinal  &comma_slash                                     &dot_colon             &command_H_hash  &hm RIGHT_COMMAND T  &alt_S_dollar  &kp N  &trans
-&trans  &kp V                   &X_percentage  &kp G                 &kp K                        &kp APOS           &kp C_PLAY_PAUSE  &kp C_MUTE  &question_exclamation  &kp R            &kp M                &kp F          &kp P  &trans
+&trans  &kp V                   &X_percentage  &kp G                 &kp K                        &kp APOS           &kp K_PLAY_PAUSE  &kp K_MUTE  &question_exclamation  &kp R            &kp M                &kp F          &kp P  &trans
                                                &super_shift          &lt 3 TAB                    &backspace_delete  &trans            &trans      &kp ENTER              &kp SPACE        &kp ESC
             >;
 
