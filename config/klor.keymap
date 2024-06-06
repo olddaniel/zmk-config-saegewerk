@@ -359,7 +359,7 @@
                                &mt LEFT_COMMAND TAB  &mt LSHIFT SPACE             &kp BSPC         &trans       &trans       &kp BSPC               &mt RIGHT_SHIFT ENTER  &kp ESC
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
             label = "ENGRAM";
         };
 
