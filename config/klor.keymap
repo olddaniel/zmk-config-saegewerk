@@ -267,7 +267,7 @@
         };
 
         semicolon {
-            bindings = <&kp SEMICOLON>;
+            bindings = <&kp PT_SEMICOLON>;
             key-positions = <15 16>;
             layers = <0>;
         };
@@ -287,51 +287,51 @@
 
         to_engram {
             bindings = <&to 0>;
-            key-positions = <3 38>;
+            key-positions = <3 37>;
             layers = <4 5 0 3 2>;
         };
 
         to_num {
             bindings = <&to 3>;
-            key-positions = <2 38>;
+            key-positions = <2 37>;
             layers = <0 4 5 3 2>;
         };
 
         to_nav {
             bindings = <&to 2>;
-            key-positions = <1 38>;
+            key-positions = <1 37>;
             layers = <0 5 4 2 3>;
         };
 
         to_QWERTY {
             bindings = <&to 4>;
-            key-positions = <0 38>;
+            key-positions = <0 37>;
             layers = <0 4 5 2 3>;
         };
 
         command_Q {
             bindings = <&kp LG(Q)>;
-            key-positions = <38 27>;
+            key-positions = <27 37>;
         };
 
         command_W {
             bindings = <&kp LG(W)>;
-            key-positions = <26 38>;
+            key-positions = <26 37>;
         };
 
         command_T {
             bindings = <&kp LG(T)>;
-            key-positions = <38 25>;
+            key-positions = <25 37>;
         };
 
         command_N {
             bindings = <&kp LG(N)>;
-            key-positions = <38 24>;
+            key-positions = <24 37>;
         };
 
         command_R {
             bindings = <&kp LG(R)>;
-            key-positions = <38 23>;
+            key-positions = <23 37>;
         };
 
         RGB {
@@ -351,10 +351,10 @@
 
         engram_layer {
             bindings = <
-        &B_Ampersand            &kp Y          &o_masculine_ordinal  &U_underscore                &kp Z                                  &kp J                  &kp L            &kp D                &kp W          &kp Q
-&trans  &accents_C_Cedilha 1 0  &alt_i_pipe    &hm LEFT_COMMAND E    &control_A_feminine_ordinal  &comma_slash                           &dot_colon             &command_H_hash  &hm RIGHT_COMMAND T  &alt_S_dollar  &kp N  &trans
-&trans  &kp V                   &X_percentage  &kp G                 &kp K                        &kp APOS      &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M                &kp F          &kp P  &trans
-                                               &backspace_delete     &hm LEFT_SHIFT TAB           &kp SPACE     &trans      &trans       &super_shift           &lt 2 ENTER      &kp ESC
+        &B_Ampersand            &kp Y          &o_masculine_ordinal  &U_underscore                &kp Z                                        &kp J                  &kp L            &kp D                &kp W          &kp Q
+&trans  &accents_C_Cedilha 1 0  &alt_i_pipe    &hm LEFT_COMMAND E    &control_A_feminine_ordinal  &comma_slash                                 &dot_colon             &command_H_hash  &hm RIGHT_COMMAND T  &alt_S_dollar  &kp N  &trans
+&trans  &kp V                   &X_percentage  &kp G                 &kp K                        &kp APOS            &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M                &kp F          &kp P  &trans
+                                               &backspace_delete     &lt 3 SPACE                  &hm LEFT_SHIFT TAB  &trans      &trans       &super_shift           &lt 2 ENTER      &lt 3 ESC
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
