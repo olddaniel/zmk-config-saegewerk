@@ -277,56 +277,56 @@
 
         to_engram {
             bindings = <&to 0>;
-            key-positions = <3 37>;
+            key-positions = <3 38>;
             layers = <4 5 0 3 2>;
         };
 
         to_num {
             bindings = <&to 3>;
-            key-positions = <2 37>;
+            key-positions = <2 38>;
             layers = <0 4 5 3 2>;
         };
 
         to_nav {
             bindings = <&to 2>;
-            key-positions = <1 37>;
+            key-positions = <1 38>;
             layers = <0 5 4 2 3>;
         };
 
         to_QWERTY {
             bindings = <&to 4>;
-            key-positions = <0 37>;
+            key-positions = <0 38>;
             layers = <0 4 5 2 3>;
         };
 
         command_Q {
             bindings = <&kp LG(Q)>;
-            key-positions = <27 37>;
+            key-positions = <27 38>;
         };
 
         command_W {
             bindings = <&kp LG(W)>;
-            key-positions = <26 37>;
+            key-positions = <26 38>;
         };
 
         command_T {
             bindings = <&kp LG(T)>;
-            key-positions = <25 37>;
+            key-positions = <25 38>;
         };
 
         command_N {
             bindings = <&kp LG(N)>;
-            key-positions = <24 37>;
+            key-positions = <24 38>;
         };
 
         command_R {
             bindings = <&kp LG(R)>;
-            key-positions = <23 37>;
+            key-positions = <23 38>;
         };
 
         RGB {
             bindings = <&to 5>;
-            key-positions = <36 37>;
+            key-positions = <37 38>;
             layers = <0 3 2 4 5>;
         };
     };
@@ -354,7 +354,7 @@
         Accents_controls {
             bindings = <
         &trans  &trans  &trans  &trans  &trans                  &kp C_BRIGHTNESS_INC  &kp C_VOLUME_UP  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &bt BT_NXT
-&trans  &trans  &trans  &trans  &trans  &trans                  &kp C_SLEEP           &kp PT_ACUTE     &kp TILDE        &kp PT_CARET     &kp PT_GRAVE  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &kp C_SLEEP           &kp PT_ACUTE     &kp PT_TILDE     &kp PT_CARET     &kp PT_GRAVE  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp C_BRIGHTNESS_DEC  &kp C_VOL_DN     &rgb_ug RGB_BRD  &trans           &bt BT_CLR    &trans
                         &trans  &trans  &trans  &trans  &trans  &trans                &trans           &trans
             >;
