@@ -53,7 +53,7 @@
         question_exclamation: question_exclamation {
             compatible = "zmk,behavior-mod-morph";
             label = "QUESTION_EXCLAMATION";
-            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
+            bindings = <&kp PT_QMARK>, <&kp EXCLAMATION>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
