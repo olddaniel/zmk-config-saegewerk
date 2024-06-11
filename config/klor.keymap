@@ -161,10 +161,10 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        X_percentage: X_percentage {
+        P_percentage: P_percentage {
             compatible = "zmk,behavior-mod-morph";
-            label = "X_PERCENTAGE";
-            bindings = <&kp X>, <&kp PERCENT>;
+            label = "P_PERCENTAGE";
+            bindings = <&kp P>, <&kp PERCENT>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
@@ -179,13 +179,13 @@
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
-        alt_i_pipe: alt_i_pipe {
+        alt_L_pipe: alt_L_pipe {
             compatible = "zmk,behavior-mod-morph";
-            label = "ALT_I_PIPE";
-            bindings = <&left_hand_hm LEFT_ALT I>, <&kp PIPE>;
+            label = "ALT_L_PIPE";
+            bindings = <&kp L>, <&kp PIPE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RALT)>;
+            mods = <(MOD_RALT|MOD_LALT)>;
         };
 
         U_underscore: U_underscore {
@@ -256,6 +256,16 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 15 22 23 24 25 26 27 28 36 37 38 39>;
         };
+
+        layer_1_backspace_delete: layer_1_backspace_delete {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_1_BACKSPACE_DELETE";
+            bindings = <&sl>, <&backspace_delete>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
     };
 
     combos {
@@ -294,13 +304,13 @@
 
         to_num {
             bindings = <&to 3>;
-            key-positions = <2 38>;
+            key-positions = <38 1>;
             layers = <0 4 5 3 2>;
         };
 
         to_nav {
             bindings = <&to 2>;
-            key-positions = <1 38>;
+            key-positions = <38 2>;
             layers = <0 5 4 2 3>;
         };
 
@@ -310,34 +320,9 @@
             layers = <0 4 5 2 3>;
         };
 
-        command_Q {
-            bindings = <&kp LG(Q)>;
-            key-positions = <27 38>;
-        };
-
-        command_W {
-            bindings = <&kp LG(W)>;
-            key-positions = <26 38>;
-        };
-
-        command_T {
-            bindings = <&kp LG(T)>;
-            key-positions = <25 38>;
-        };
-
-        command_N {
-            bindings = <&kp LG(N)>;
-            key-positions = <24 38>;
-        };
-
-        command_R {
-            bindings = <&kp LG(R)>;
-            key-positions = <23 38>;
-        };
-
-        RGB {
+        to_RGB {
             bindings = <&to 5>;
-            key-positions = <37 38>;
+            key-positions = <38 4>;
             layers = <0 3 2 4 5>;
         };
     };
@@ -352,10 +337,10 @@
 
         engram_layer {
             bindings = <
-        &B_Ampersand  &kp Y          &o_masculine_ordinal          &U_underscore                   &kp Z                                       &kp J                  &kp L            &kp D                           &kp W          &kp Q
-&trans  &cecedilha    &alt_i_pipe    &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal     &comma_slash                                &dot_colon             &control_H_hash  &right_hand_hm RIGHT_COMMAND T  &alt_S_dollar  &kp N  &trans
-&trans  &lt 1 V       &X_percentage  &kp G                         &kp K                           &kp PT_APOSTROPHE  &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M                           &kp F          &kp P  &trans
-                                     &backspace_delete             &left_hand_hm LEFT_SHIFT SPACE  &lt 3 TAB          &trans      &trans       &super_shift           &lt 2 ENTER      &lt 3 ESC
+        &B_Ampersand  &kp Y                     &o_masculine_ordinal           &U_underscore                   &kp Z                                       &kp J                  &kp L            &kp D                           &kp W          &kp Q
+&trans  &cecedilha    &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E   &control_A_feminine_ordinal     &comma_slash                                &dot_colon             &control_H_hash  &right_hand_hm RIGHT_COMMAND T  &alt_S_dollar  &kp N          &trans
+&trans  &kp V         &kp X                     &kp G                          &kp K                           &kp PT_APOSTROPHE  &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M                           &kp F          &P_percentage  &trans
+                                                &layer_1_backspace_delete 1 0  &left_hand_hm LEFT_SHIFT SPACE  &lt 3 TAB          &trans      &trans       &super_shift           &lt 2 ENTER      &lt 1 ESC
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
@@ -364,10 +349,10 @@
 
         Accents_controls {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans                  &kp C_BRIGHTNESS_INC  &kp C_VOLUME_UP  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &bt BT_NXT
-&trans  &trans  &trans  &trans  &trans  &trans                  &kp C_SLEEP           &kp PT_ACUTE     &kp PT_TILDE     &kp PT_CARET     &kp PT_GRAVE  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp C_BRIGHTNESS_DEC  &kp C_VOL_DN     &rgb_ug RGB_BRD  &trans           &bt BT_CLR    &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans                &trans           &trans
+        &trans     &trans     &trans     &trans     &trans                     &trans  &trans        &trans        &trans        &trans
+&trans  &trans     &trans     &trans     &trans     &trans                     &trans  &kp PT_ACUTE  &kp PT_TILDE  &kp PT_CARET  &kp PT_GRAVE  &trans
+&trans  &kp LG(R)  &kp LG(N)  &kp LG(T)  &kp LG(W)  &kp LG(Q)  &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans
+                              &trans     &trans     &trans     &trans  &trans  &trans  &trans        &trans
             >;
 
             label = "ACCENTS";
@@ -375,9 +360,9 @@
 
         Nav_Mouse_Scroll {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans                  &mkp RCLK  &mkp LCLK       &mkp RCLK      &mkp MCLK       &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &mkp LCLK  &kp LEFT_ARROW  &kp UP         &kp DOWN_ARROW  &kp RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MCLK  &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP     &kp END    &trans
+        &trans  &trans  &trans  &trans  &trans                  &mkp MCLK  &bt BT_NXT      &kp K_SCROLL_UP  &kp K_SCROLL_DOWN  &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans  &trans                  &mkp LCLK  &kp LEFT_ARROW  &kp UP           &kp DOWN_ARROW     &kp RIGHT       &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp RCLK  &kp HOME        &kp PG_UP        &kp PAGE_DOWN      &kp END         &trans
                         &trans  &trans  &trans  &trans  &trans  &trans     &trans          &trans
             >;
 
@@ -386,10 +371,10 @@
 
         Num_Calc_parentesis {
             bindings = <
-        &kp KP_PLUS  &kp KP_MINUS     &kp KP_MULTIPLY  &kp KP_SLASH  &kp KP_EQUAL                     &trans     &open_parentesis_less  &close_parentesis_greater  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans  &kp KP_N0    &kp KP_N1        &kp KP_N2        &kp KP_N3     &kp KP_N4                        &kp KP_N5  &kp KP_N6              &kp KP_N7                  &kp KP_N8         &kp KP_N9          &trans
-&trans  &kp KP_N5    &kp KP_NUMBER_6  &kp KP_N7        &kp KP_N8     &kp KP_NUMBER_9  &trans  &trans  &trans     &trans                 &trans                     &trans            &trans             &trans
-                                      &trans           &trans        &trans           &trans  &trans  &trans     &trans                 &trans
+        &kp KP_PLUS  &kp KP_MINUS     &kp KP_MULTIPLY  &kp KP_SLASH  &kp KP_EQUAL                     &kp PT_PIPE     &open_parentesis_less  &close_parentesis_greater  &kp PT_LEFT_BRACKET  &kp PT_RIGHT_BRACKET
+&trans  &kp KP_N0    &kp KP_N1        &kp KP_N2        &kp KP_N3     &kp KP_N4                        &kp KP_N5       &kp KP_N6              &kp KP_N7                  &kp KP_N8            &kp KP_N9             &trans
+&trans  &kp KP_N5    &kp KP_NUMBER_6  &kp KP_N7        &kp KP_N8     &kp KP_NUMBER_9  &trans  &trans  &kp PT_PERCENT  &kp PT_LESS_THAN       &kp PT_GREATER_THAN        &kp PT_LEFT_BRACE    &kp PT_RIGHT_BRACE    &trans
+                                      &trans           &trans        &trans           &trans  &trans  &trans          &trans                 &trans
             >;
 
             label = "CALC";
@@ -398,8 +383,8 @@
         qwerty_layer {
             bindings = <
         &kp Q    &kp W                     &kp E                         &kp R                         &kp T                   &kp Y   &kp U                           &kp I                          &kp O                       &kp P
-&trans  &lt 1 A  &left_hand_hm LEFT_ALT S  &left_hand_hm LEFT_COMMAND D  &left_hand_hm LEFT_CONTROL F  &kp G                   &kp H   &right_hand_hm RIGHT_CONTROL J  &right_hand_hm LEFT_COMMAND K  &right_hand_hm RIGHT_ALT L  &kp SEMI               &trans
-&trans  &kp Z    &kp X                     &cecedilha                    &kp V                         &kp B   &trans  &trans  &kp N   &kp M                           &comma_slash                   &dot_colon                  &question_exclamation  &trans
+&trans  &kp A    &left_hand_hm LEFT_ALT S  &left_hand_hm LEFT_COMMAND D  &left_hand_hm LEFT_CONTROL F  &kp G                   &kp H   &right_hand_hm RIGHT_CONTROL J  &right_hand_hm LEFT_COMMAND K  &right_hand_hm RIGHT_ALT L  &kp SEMI               &trans
+&trans  &lt 1 Z  &kp X                     &cecedilha                    &kp V                         &kp B   &trans  &trans  &kp N   &kp M                           &comma_slash                   &dot_colon                  &question_exclamation  &trans
                                            &trans                        &trans                        &trans  &trans  &trans  &trans  &trans                          &trans
             >;
 
@@ -409,9 +394,9 @@
 
         rgb_layer {
             bindings = <
-        &rgb_ug RGB_EFF  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI                  &trans  &trans  &trans  &trans  &trans
-&trans  &rgb_ug RGB_EFR  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans           &trans           &trans           &bt BT_CLR       &bt BT_CLR_ALL   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &rgb_ug RGB_SAI  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans           &trans           &trans           &trans           &trans                           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &rgb_ug RGB_SAD  &rgb_ug RGB_SPD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_HUD  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                                           &trans           &trans           &trans           &trans  &trans  &trans  &trans  &trans
             >;
 
