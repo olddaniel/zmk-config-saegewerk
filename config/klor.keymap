@@ -245,16 +245,6 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        accents_C_Cedilha: accents_C_Cedilha {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ACCENTS_C_CEDILHA";
-            bindings = <&mo>, <&cecedilha>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            flavor = "tap-preferred";
-        };
     };
 
     combos {
@@ -351,10 +341,10 @@
 
         engram_layer {
             bindings = <
-        &B_Ampersand            &kp Y          &o_masculine_ordinal  &U_underscore                &kp Z                                  &kp J                  &kp L            &kp D                &kp W          &kp Q
-&trans  &accents_C_Cedilha 1 0  &alt_i_pipe    &hm LEFT_COMMAND E    &control_A_feminine_ordinal  &comma_slash                           &dot_colon             &command_H_hash  &hm RIGHT_COMMAND T  &alt_S_dollar  &kp N  &trans
-&trans  &kp V                   &X_percentage  &kp G                 &kp K                        &kp APOS      &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M                &kp F          &kp P  &trans
-                                               &backspace_delete     &hm LEFT_SHIFT SPACE         &lt 3 TAB     &trans      &trans       &super_shift           &lt 2 ENTER      &lt 3 ESC
+        &B_Ampersand  &kp Y          &o_masculine_ordinal  &U_underscore                &kp Z                                  &kp J                  &kp L            &kp D                &kp W          &kp Q
+&trans  &cecedilha    &alt_i_pipe    &hm LEFT_COMMAND E    &control_A_feminine_ordinal  &comma_slash                           &dot_colon             &command_H_hash  &hm RIGHT_COMMAND T  &alt_S_dollar  &kp N  &trans
+&trans  &lt 1 V       &X_percentage  &kp G                 &kp K                        &kp APOS      &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M                &kp F          &kp P  &trans
+                                     &backspace_delete     &hm LEFT_SHIFT SPACE         &lt 3 TAB     &trans      &trans       &super_shift           &lt 2 ENTER      &lt 3 ESC
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
