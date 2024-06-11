@@ -374,9 +374,9 @@
 
         Nav_Mouse_Scroll {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans                  &mkp RCLK  &mkp LCLK       &mkp RCLK      &mkp MCLK    &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &mkp LCLK  &kp LEFT_ARROW  &kp DOWN       &kp UP       &kp RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MCLK  &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &trans
+        &trans  &trans  &trans  &trans  &trans                  &mkp RCLK  &mkp LCLK       &mkp RCLK      &mkp MCLK       &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &mkp LCLK  &kp LEFT_ARROW  &kp UP         &kp DOWN_ARROW  &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MCLK  &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP     &kp END    &trans
                         &trans  &trans  &trans  &trans  &trans  &trans     &trans          &trans
             >;
 
