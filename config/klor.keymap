@@ -80,7 +80,7 @@
         control_S_dollar: control_S_dollar {
             compatible = "zmk,behavior-mod-morph";
             label = "CONTROL_S_DOLLAR";
-            bindings = <&mt RIGHT_CONTROL S>, <&kp DOLLAR>;
+            bindings = <&left_hand_hm RIGHT_CONTROL S>, <&kp DOLLAR>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
@@ -179,9 +179,9 @@
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
-        alt_L_pipe: alt_L_pipe {
+        L_pipe: L_pipe {
             compatible = "zmk,behavior-mod-morph";
-            label = "ALT_L_PIPE";
+            label = "L_PIPE";
             bindings = <&kp L>, <&kp PIPE>;
 
             #binding-cells = <0>;
