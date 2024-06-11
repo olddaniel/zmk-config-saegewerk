@@ -90,7 +90,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "CONTROL_A_FEMININE_ORDINAL";
             bindings =
-                <&mt LEFT_CONTROL A>,
+                <&left_hand_hm LEFT_CONTROL A>,
                 <&kp PT_FEMININE_ORDINAL_INDICATOR>;
 
             #binding-cells = <0>;
