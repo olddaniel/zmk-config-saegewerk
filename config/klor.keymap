@@ -266,6 +266,20 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
         };
+
+        esc_to_layer_3: esc_to_layer_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ESC_TO_LAYER_3";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&to 3>;
+        };
+
+        esc_to_layer_0: esc_to_layer_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ESC_TO_LAYER_0";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&to 0>;
+        };
     };
 
     combos {
@@ -340,7 +354,7 @@
         &B_Ampersand  &kp Y                     &o_masculine_ordinal           &U_underscore                   &kp Z                                       &kp J                  &kp L            &kp D                           &kp W          &kp Q
 &trans  &cecedilha    &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E   &control_A_feminine_ordinal     &comma_slash                                &dot_colon             &control_H_hash  &right_hand_hm RIGHT_COMMAND T  &alt_S_dollar  &kp N          &trans
 &trans  &kp V         &kp X                     &kp G                          &kp K                           &kp PT_APOSTROPHE  &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M                           &kp F          &P_percentage  &trans
-                                                &layer_1_backspace_delete 1 0  &left_hand_hm LEFT_SHIFT SPACE  &lt 3 TAB          &trans      &trans       &super_shift           &lt 2 ENTER      &lt 1 ESC
+                                                &layer_1_backspace_delete 1 0  &left_hand_hm LEFT_SHIFT SPACE  &lt 3 TAB          &trans      &trans       &super_shift           &lt 2 ENTER      &esc_to_layer_3
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
@@ -374,7 +388,7 @@
         &kp KP_PLUS  &kp KP_MINUS     &kp KP_MULTIPLY  &kp KP_SLASH  &kp KP_EQUAL                     &kp PT_PIPE     &open_parentesis_less  &close_parentesis_greater  &kp PT_LEFT_BRACKET  &kp PT_RIGHT_BRACKET
 &trans  &kp KP_N0    &kp KP_N1        &kp KP_N2        &kp KP_N3     &kp KP_N4                        &kp KP_N5       &kp KP_N6              &kp KP_N7                  &kp KP_N8            &kp KP_N9             &trans
 &trans  &kp KP_N5    &kp KP_NUMBER_6  &kp KP_N7        &kp KP_N8     &kp KP_NUMBER_9  &trans  &trans  &kp PT_PERCENT  &kp PT_LESS_THAN       &kp PT_GREATER_THAN        &kp PT_LEFT_BRACE    &kp PT_RIGHT_BRACE    &trans
-                                      &trans           &trans        &trans           &trans  &trans  &trans          &trans                 &trans
+                                      &trans           &trans        &trans           &trans  &trans  &trans          &trans                 &esc_to_layer_0
             >;
 
             label = "CALC";
