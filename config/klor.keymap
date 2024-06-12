@@ -363,7 +363,7 @@
 
         Accents_controls {
             bindings = <
-        &kp LG(S)      &kp LG(F)  &kp LG(LS(L))  &kp LG(PT_PERIOD)  &kp LG(PT_COMMA)                  &trans  &trans        &trans        &trans        &trans
+        &kp F2         &kp LG(F)  &kp LG(LS(L))  &kp LG(PT_PERIOD)  &kp LG(PT_COMMA)                  &trans  &trans        &trans        &trans        &trans
 &trans  &kp LG(PT_N4)  &trans     &trans         &trans             &kp LG(PT_N3)                     &trans  &kp PT_ACUTE  &kp PT_TILDE  &kp PT_CARET  &kp PT_GRAVE  &trans
 &trans  &kp LG(R)      &kp LG(N)  &kp LG(T)      &kp LG(W)          &kp LG(Q)         &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans
                                   &trans         &trans             &trans            &trans  &trans  &trans  &trans        &trans
