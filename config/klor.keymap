@@ -322,25 +322,13 @@
 
         to_engram {
             bindings = <&to 0>;
-            key-positions = <3 38>;
-            layers = <4 5 0 3 2>;
-        };
-
-        to_num {
-            bindings = <&to 3>;
-            key-positions = <38 1>;
-            layers = <0 4 5 3 2>;
-        };
-
-        to_nav {
-            bindings = <&to 2>;
-            key-positions = <38 2>;
-            layers = <0 5 4 2 3>;
+            key-positions = <3 4>;
+            layers = <4 5 3 2>;
         };
 
         to_QWERTY {
             bindings = <&to 4>;
-            key-positions = <0 38>;
+            key-positions = <41 5>;
             layers = <0 4 5 2 3>;
         };
 
@@ -348,6 +336,12 @@
             bindings = <&to 5>;
             key-positions = <38 4>;
             layers = <0 3 2 4 5>;
+        };
+
+        to_layer_2 {
+            bindings = <&to 2>;
+            key-positions = <3 4>;
+            layers = <0>;
         };
     };
 
