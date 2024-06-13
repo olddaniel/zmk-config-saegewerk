@@ -389,10 +389,10 @@
 
         Num_Calc_parentesis {
             bindings = <
-        &kp KP_PLUS  &kp KP_MINUS     &kp KP_MULTIPLY  &kp KP_SLASH  &kp KP_EQUAL                     &kp PT_PIPE     &open_parentesis_less  &close_parentesis_greater  &kp PT_LEFT_BRACKET  &kp PT_RIGHT_BRACKET
-&trans  &kp KP_N0    &kp KP_N1        &kp KP_N2        &kp KP_N3     &kp KP_N4                        &kp KP_N5       &kp KP_N6              &kp KP_N7                  &kp KP_N8            &kp KP_N9             &trans
-&trans  &kp KP_N5    &kp KP_NUMBER_6  &kp KP_N7        &kp KP_N8     &kp KP_NUMBER_9  &trans  &trans  &kp PT_PERCENT  &kp PT_LESS_THAN       &kp PT_GREATER_THAN        &kp PT_LEFT_BRACE    &kp PT_RIGHT_BRACE    &trans
-                                      &trans           &trans        &trans           &trans  &trans  &trans          &trans                 &esc_to_layer_0
+        &kp KP_PLUS  &kp KP_MINUS                  &kp KP_MULTIPLY                   &kp KP_SLASH                      &kp KP_EQUAL                     &kp PT_PIPE     &open_parentesis_less               &close_parentesis_greater           &kp PT_LEFT_BRACKET             &kp PT_RIGHT_BRACKET
+&trans  &kp KP_N0    &left_hand_hm LEFT_ALT KP_N1  &left_hand_hm LEFT_COMMAND KP_N2  &left_hand_hm LEFT_CONTROL KP_N3  &kp KP_N4                        &kp KP_N5       &right_hand_hm RIGHT_CONTROL KP_N6  &right_hand_hm RIGHT_COMMAND KP_N7  &right_hand_hm RIGHT_ALT KP_N8  &kp KP_N9             &trans
+&trans  &kp KP_N5    &kp KP_NUMBER_6               &kp KP_N7                         &kp KP_N8                         &kp KP_NUMBER_9  &trans  &trans  &kp PT_PERCENT  &kp PT_LESS_THAN                    &kp PT_GREATER_THAN                 &kp PT_LEFT_BRACE               &kp PT_RIGHT_BRACE    &trans
+                                                   &trans                            &trans                            &trans           &trans  &trans  &trans          &trans                              &esc_to_layer_0
             >;
 
             label = "CALC";
