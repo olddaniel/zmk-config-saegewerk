@@ -115,27 +115,6 @@
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
-        sticky_shift_hold_shift: sticky_shift_hold_shift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "STICKY_SHIFT_HOLD_SHIFT";
-            bindings = <&kp>, <&sk>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-        };
-
-        super_shift: super_shift {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SUPER_SHIFT";
-            bindings =
-                <&sticky_shift_hold_shift LEFT_SHIFT LEFT_SHIFT>,
-                <&caps_word>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         control_H_hash: control_H_hash {
             compatible = "zmk,behavior-mod-morph";
             label = "CONTROL_H_HASH";
@@ -283,9 +262,19 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ULTIMATE_SHIFT";
             #binding-cells = <0>;
-            bindings = <&sk LEFT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
+            bindings = <&sticky_shift LEFT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
 
             tapping-term-ms = <180>;
+        };
+
+        sticky_shift: sticky_shift {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_SHIFT";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            quick-release;
+            ignore-modifiers;
         };
     };
 
