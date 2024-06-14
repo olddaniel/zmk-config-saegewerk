@@ -139,7 +139,7 @@
         control_H_hash: control_H_hash {
             compatible = "zmk,behavior-mod-morph";
             label = "CONTROL_H_HASH";
-            bindings = <&right_hand_hm RIGHT_CONTROL H>, <&kp HASH>;
+            bindings = <&none>, <&kp HASH>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
@@ -148,7 +148,7 @@
         alt_S_dollar: alt_S_dollar {
             compatible = "zmk,behavior-mod-morph";
             label = "ALT_S_DOLLAR";
-            bindings = <&right_hand_hm RIGHT_ALT S>, <&kp DOLLAR>;
+            bindings = <&none>, <&kp DOLLAR>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
@@ -244,24 +244,9 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        right_hand_hm: right_hand_hm {
+        sl1_TAB: sl1_TAB {
             compatible = "zmk,behavior-hold-tap";
-            label = "RIGHT_HAND_HM";
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick_tap_ms = <0>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            hold-trigger-on-release;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 15 22 23 24 25 26 27 28 36 37 38 39>;
-        };
-
-        sticky_layer_1_TAB: sticky_layer_1_TAB {
-            compatible = "zmk,behavior-hold-tap";
-            label = "STICKY_LAYER_1_TAB";
+            label = "SL1_TAB";
             bindings = <&sl>, <&kp>;
 
             #binding-cells = <2>;
@@ -269,9 +254,9 @@
             flavor = "balanced";
         };
 
-        layer_2_backspace_delete: layer_2_backspace_delete {
+        sl3_backspace_delete: sl3_backspace_delete {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_2_BACKSPACE_DELETE";
+            label = "SL3_BACKSPACE_DELETE";
             bindings = <&sl>, <&backspace_delete>;
 
             #binding-cells = <2>;
@@ -344,16 +329,16 @@
             layers = <0 3 2 4>;
         };
 
-        to_layer_3 {
-            bindings = <&to 3>;
-            key-positions = <25 24>;
-            layers = <0 2 1 3 4 5>;
-        };
-
         to_layer_2 {
             bindings = <&to 2>;
             key-positions = <26 25>;
-            layers = <0 2 1 3 4 5>;
+            layers = <0 3 2 4>;
+        };
+
+        to_layer_3 {
+            bindings = <&to 3>;
+            key-positions = <25 24>;
+            layers = <0 3 2 4>;
         };
     };
 
@@ -367,10 +352,10 @@
 
         engram_layer {
             bindings = <
-        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp Z                                               &kp J                  &L_pipe          &kp D    &kp W  &kp Q
-&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                        &dot_colon             &kp H            &kp T    &kp S  &kp N          &trans
-&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp PT_APOSTROPHE          &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M    &kp F  &P_percentage  &trans
-                                                                   &backspace_delete             &lt 2 SPACE                  &sticky_layer_1_TAB 1 TAB  &trans      &trans       &kp ENTER              &ultimate_shift  &kp ESC
+        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp Z                                       &kp J                  &L_pipe          &kp D    &kp W  &kp Q
+&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                &dot_colon             &kp H            &kp T    &kp S  &kp N          &trans
+&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp PT_APOSTROPHE  &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M    &kp F  &P_percentage  &trans
+                                                                   &sl3_backspace_delete 3 0     &lt 2 SPACE                  &sl1_TAB 1 TAB     &trans      &trans       &kp ENTER              &ultimate_shift  &kp ESC
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
@@ -424,10 +409,10 @@
 
         qwerty_layer {
             bindings = <
-        &kp Q    &kp W                     &kp E                         &kp R                         &kp T                   &kp Y   &kp U                           &kp I                          &kp O                       &kp P
-&trans  &kp A    &left_hand_hm LEFT_ALT S  &left_hand_hm LEFT_COMMAND D  &left_hand_hm LEFT_CONTROL F  &kp G                   &kp H   &right_hand_hm RIGHT_CONTROL J  &right_hand_hm LEFT_COMMAND K  &right_hand_hm RIGHT_ALT L  &kp SEMI               &trans
-&trans  &lt 1 Z  &kp X                     &cecedilha                    &kp V                         &kp B   &trans  &trans  &kp N   &kp M                           &comma_slash                   &dot_colon                  &question_exclamation  &trans
-                                           &trans                        &trans                        &trans  &trans  &trans  &trans  &trans                          &to 0
+        &kp Q    &kp W                     &kp E                         &kp R                         &kp T                   &kp Y   &kp U   &kp I         &kp O       &kp P
+&trans  &kp A    &left_hand_hm LEFT_ALT S  &left_hand_hm LEFT_COMMAND D  &left_hand_hm LEFT_CONTROL F  &kp G                   &kp H   &kp J   &kp K         &kp L       &kp SEMI               &trans
+&trans  &lt 1 Z  &kp X                     &cecedilha                    &kp V                         &kp B   &trans  &trans  &kp N   &kp M   &comma_slash  &dot_colon  &question_exclamation  &trans
+                                           &trans                        &trans                        &trans  &trans  &trans  &trans  &trans  &to 0
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
