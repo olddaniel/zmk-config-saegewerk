@@ -367,9 +367,9 @@
 
         engram_layer {
             bindings = <
-        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp Z                                               &kp J                  &kp L            &kp D                           &kp W          &kp Q
-&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                        &dot_colon             &control_H_hash  &right_hand_hm RIGHT_COMMAND T  &alt_S_dollar  &right_hand_hm RIGHT_SHIFT N  &trans
-&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp PT_APOSTROPHE          &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M                           &kp F          &P_percentage                 &trans
+        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp Z                                               &kp J                  &L_pipe          &kp D    &kp W  &kp Q
+&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                        &dot_colon             &kp H            &kp T    &kp S  &kp N          &trans
+&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp PT_APOSTROPHE          &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M    &kp F  &P_percentage  &trans
                                                                    &backspace_delete             &lt 2 SPACE                  &sticky_layer_1_TAB 1 TAB  &trans      &trans       &kp ENTER              &ultimate_shift  &kp ESC
             >;
 
@@ -401,10 +401,10 @@
 
         Num_Calc_parentesis {
             bindings = <
-        &kp KP_PLUS  &kp KP_MINUS                  &kp KP_MULTIPLY                   &kp KP_SLASH                      &kp KP_EQUAL                     &kp PT_PIPE     &open_parentesis_less               &close_parentesis_greater           &kp PT_LEFT_BRACKET             &kp PT_RIGHT_BRACKET
-&trans  &kp KP_N0    &left_hand_hm LEFT_ALT KP_N1  &left_hand_hm LEFT_COMMAND KP_N2  &left_hand_hm LEFT_CONTROL KP_N3  &kp KP_N4                        &kp KP_N5       &right_hand_hm RIGHT_CONTROL KP_N6  &right_hand_hm RIGHT_COMMAND KP_N7  &right_hand_hm RIGHT_ALT KP_N8  &kp KP_N9             &trans
-&trans  &kp KP_N5    &kp KP_NUMBER_6               &kp KP_N7                         &kp KP_N8                         &kp KP_NUMBER_9  &trans  &trans  &kp PT_PERCENT  &kp PT_LESS_THAN                    &kp PT_GREATER_THAN                 &kp PT_LEFT_BRACE               &kp PT_RIGHT_BRACE    &trans
-                                                   &trans                            &trans                            &trans           &trans  &trans  &trans          &trans                              &to 0
+        &kp KP_PLUS  &kp KP_MINUS                  &kp KP_MULTIPLY                   &kp KP_SLASH                      &kp KP_EQUAL                     &kp PT_PIPE     &open_parentesis_less  &close_parentesis_greater  &kp PT_LEFT_BRACKET  &kp PT_RIGHT_BRACKET
+&trans  &kp KP_N0    &left_hand_hm LEFT_ALT KP_N1  &left_hand_hm LEFT_COMMAND KP_N2  &left_hand_hm LEFT_CONTROL KP_N3  &kp KP_N4                        &kp KP_N5       &kp KP_N6              &kp KP_N7                  &kp KP_N8            &kp KP_N9             &trans
+&trans  &kp KP_N5    &kp KP_NUMBER_6               &kp KP_N7                         &kp KP_N8                         &kp KP_NUMBER_9  &trans  &trans  &kp PT_PERCENT  &kp PT_LESS_THAN       &kp PT_GREATER_THAN        &kp PT_LEFT_BRACE    &kp PT_RIGHT_BRACE    &trans
+                                                   &trans                            &trans                            &trans           &trans  &trans  &trans          &trans                 &to 0
             >;
 
             label = "CALC";
