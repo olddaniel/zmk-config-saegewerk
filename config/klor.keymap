@@ -223,26 +223,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        sl1_TAB: sl1_TAB {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SL1_TAB";
-            bindings = <&sl>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-        };
-
-        sl3_backspace_delete: sl3_backspace_delete {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SL3_BACKSPACE_DELETE";
-            bindings = <&sl>, <&backspace_delete>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-        };
-
         shift_C_Cecedilha: shift_C_Cecedilha {
             compatible = "zmk,behavior-hold-tap";
             label = "SHIFT_C_CECEDILHA";
@@ -341,10 +321,10 @@
 
         engram_layer {
             bindings = <
-        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp Z                                       &kp J                  &L_pipe          &kp D    &kp W  &kp Q
-&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                &dot_colon             &kp H            &kp T    &kp S  &kp N          &trans
-&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp PT_APOSTROPHE  &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M    &kp F  &P_percentage  &trans
-                                                                   &sl3_backspace_delete 3 0     &lt 2 SPACE                  &sl1_TAB 1 TAB     &trans      &trans       &kp ENTER              &ultimate_shift  &kp ESC
+        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp Z                                       &kp J                  &L_pipe          &kp D      &kp W  &kp Q
+&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                &dot_colon             &kp H            &kp T      &kp S  &kp N          &trans
+&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp PT_APOSTROPHE  &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M      &kp F  &P_percentage  &trans
+                                                                   &backspace_delete             &lt 2 SPACE                  &lt 3 TAB          &trans      &trans       &kp ENTER              &ultimate_shift  &lt 1 ESC
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
