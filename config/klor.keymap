@@ -344,10 +344,10 @@
 
         Nav_Mouse_Scroll {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans                  &mkp MCLK  &bt BT_NXT      &kp K_SCROLL_UP  &kp K_SCROLL_DOWN  &bt BT_CLR_ALL
-&trans  &trans  &trans  &trans  &trans  &trans                  &mkp LCLK  &kp LEFT_ARROW  &kp UP           &kp DOWN_ARROW     &kp RIGHT       &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp RCLK  &kp HOME        &kp PG_UP        &kp PAGE_DOWN      &kp END         &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans     &trans          &to 0
+        &kp F2         &kp LG(LS(L))  &kp LG(PT_F)  &kp LG(DOT)  &kp LG(KP_COMMA)                  &mkp MCLK  &bt BT_NXT      &kp K_SCROLL_UP  &kp K_SCROLL_DOWN  &bt BT_CLR_ALL
+&trans  &kp LA(KP_N4)  &trans         &trans        &trans       &kp LA(KP_N3)                     &mkp LCLK  &kp LEFT_ARROW  &kp UP           &kp DOWN_ARROW     &kp RIGHT       &trans
+&trans  &kp LG(R)      &kp LG(N)      &kp LG(T)     &kp LG(W)    &kp LG(Q)         &trans  &trans  &mkp RCLK  &kp HOME        &kp PG_UP        &kp PAGE_DOWN      &kp END         &trans
+                                      &trans        &trans       &trans            &trans  &trans  &trans     &trans          &to 0
             >;
 
             label = "MOUSE";
