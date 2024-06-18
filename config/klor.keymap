@@ -77,30 +77,12 @@
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
-        control_S_dollar: control_S_dollar {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CONTROL_S_DOLLAR";
-            bindings = <&left_hand_hm RIGHT_CONTROL S>, <&kp DOLLAR>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
         control_A_feminine_ordinal: control_A_feminine_ordinal {
             compatible = "zmk,behavior-mod-morph";
             label = "CONTROL_A_FEMININE_ORDINAL";
             bindings =
                 <&left_hand_hm LEFT_CONTROL A>,
                 <&kp PT_FEMININE_ORDINAL_INDICATOR>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        apost_slash: apost_slash {
-            compatible = "zmk,behavior-mod-morph";
-            label = "APOST_SLASH";
-            bindings = <&kp APOS>, <&kp KP_SLASH>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
@@ -113,24 +95,6 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-
-        control_H_hash: control_H_hash {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CONTROL_H_HASH";
-            bindings = <&none>, <&kp HASH>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        alt_S_dollar: alt_S_dollar {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ALT_S_DOLLAR";
-            bindings = <&none>, <&kp DOLLAR>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
         };
 
         comma_slash: comma_slash {
@@ -178,51 +142,6 @@
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
-        comma_slash_backslash: comma_slash_backslash {
-            compatible = "zmk,behavior-mod-morph";
-            label = "COMMA_SLASH_BACKSLASH";
-            bindings = <&comma_slash>, <&kp PT_BACKSLASH>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        open_parentesis_less: open_parentesis_less {
-            compatible = "zmk,behavior-mod-morph";
-            label = "OPEN_PARENTESIS_LESS";
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        close_parentesis_greater: close_parentesis_greater {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CLOSE_PARENTESIS_GREATER";
-            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        command_T_shift_same: command_T_shift_same {
-            compatible = "zmk,behavior-mod-morph";
-            label = "COMMAND_T_SHIFT_SAME";
-            bindings = <&kp LG(T)>, <&kp LS(LG(T))>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        command_R_shift_same: command_R_shift_same {
-            compatible = "zmk,behavior-mod-morph";
-            label = "COMMAND_R_SHIFT_SAME";
-            bindings = <&kp LG(R)>, <&kp LS(LG(R))>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         shift_C_Cecedilha: shift_C_Cecedilha {
             compatible = "zmk,behavior-hold-tap";
             label = "SHIFT_C_CECEDILHA";
@@ -242,19 +161,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ULTIMATE_SHIFT";
             #binding-cells = <0>;
-            bindings = <&sticky_shift LEFT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
+            bindings = <&sk LEFT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
 
             tapping-term-ms = <180>;
-        };
-
-        sticky_shift: sticky_shift {
-            compatible = "zmk,behavior-sticky-key";
-            label = "STICKY_SHIFT";
-            bindings = <&kp>;
-            #binding-cells = <1>;
-            release-after-ms = <1000>;
-            quick-release;
-            ignore-modifiers;
         };
     };
 
@@ -286,28 +195,16 @@
             require-prior-idle-ms = <150>;
         };
 
-        to_QWERTY {
-            bindings = <&to 5>;
-            key-positions = <32 33>;
-            layers = <0 4 2 3>;
-        };
-
-        to_RGB {
-            bindings = <&to 4>;
-            key-positions = <31 32>;
-            layers = <0 3 2 4>;
-        };
-
         to_layer_2 {
             bindings = <&to 2>;
             key-positions = <26 25>;
-            layers = <0 3 2 4>;
+            layers = <0 3 2 1>;
         };
 
         to_layer_3 {
             bindings = <&to 3>;
             key-positions = <25 24>;
-            layers = <0 3 2 4>;
+            layers = <0 3 2 1>;
         };
     };
 
@@ -319,7 +216,7 @@
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-        engram_layer {
+        engram {
             bindings = <
         &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp Z                                       &kp J                  &L_pipe          &kp D      &kp W  &kp Q
 &trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                &dot_colon             &kp H            &kp T      &kp S  &kp N          &trans
@@ -331,61 +228,38 @@
             label = "ENGRAM";
         };
 
-        Accents_controls {
+        accents_RGB {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans                  &trans  &trans        &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp PT_ACUTE  &kp PT_TILDE  &kp PT_CARET  &kp PT_GRAVE  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans
-            >;
-
-            label = "ACCENTS";
-        };
-
-        Nav_Mouse_Scroll {
-            bindings = <
-        &kp F2         &kp LG(LS(L))  &kp LG(PT_F)  &kp LG(DOT)  &kp LG(KP_COMMA)                  &mkp MCLK  &bt BT_NXT      &kp K_SCROLL_UP  &kp K_SCROLL_DOWN  &bt BT_CLR_ALL
-&trans  &kp LA(KP_N4)  &trans         &trans        &trans       &kp LA(KP_N3)                     &mkp LCLK  &kp LEFT_ARROW  &kp UP           &kp DOWN_ARROW     &kp RIGHT       &trans
-&trans  &kp LG(R)      &kp LG(N)      &kp LG(T)     &kp LG(W)    &kp LG(Q)         &trans  &trans  &mkp RCLK  &kp HOME        &kp PG_UP        &kp PAGE_DOWN      &kp END         &trans
-                                      &trans        &trans       &trans            &trans  &trans  &trans     &trans          &to 0
-            >;
-
-            label = "MOUSE";
-        };
-
-        Num_Calc_parentesis {
-            bindings = <
-        &kp KP_PLUS  &kp KP_MINUS                  &kp KP_MULTIPLY                   &kp KP_SLASH                      &kp KP_EQUAL                     &kp PT_PIPE     &open_parentesis_less  &close_parentesis_greater  &kp PT_LEFT_BRACKET  &kp PT_RIGHT_BRACKET
-&trans  &kp KP_N0    &left_hand_hm LEFT_ALT KP_N1  &left_hand_hm LEFT_COMMAND KP_N2  &left_hand_hm LEFT_CONTROL KP_N3  &kp KP_N4                        &kp KP_N5       &kp KP_N6              &kp KP_N7                  &kp KP_N8            &kp KP_N9             &trans
-&trans  &kp KP_N5    &kp KP_NUMBER_6               &kp KP_N7                         &kp KP_N8                         &kp KP_NUMBER_9  &trans  &trans  &kp PT_PERCENT  &kp PT_LESS_THAN       &kp PT_GREATER_THAN        &kp PT_LEFT_BRACE    &kp PT_RIGHT_BRACE    &trans
-                                                   &trans                            &trans                            &trans           &trans  &trans  &trans          &trans                 &to 0
-            >;
-
-            label = "CALC";
-        };
-
-        rgb_layer {
-            bindings = <
-        &rgb_ug RGB_SAI  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans           &trans           &trans           &trans           &trans                           &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &rgb_ug RGB_SAD  &rgb_ug RGB_SPD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_HUD  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                          &trans           &trans           &trans           &trans  &trans  &trans  &trans  &to 0
+        &rgb_ug RGB_SAI  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI                  &trans  &trans        &trans        &trans        &trans
+&trans  &trans           &trans           &trans           &trans           &kp LA(N4)                       &trans  &kp PT_ACUTE  &kp PT_TILDE  &kp PT_CARET  &kp PT_GRAVE  &trans
+&trans  &rgb_ug RGB_SAD  &rgb_ug RGB_SPD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_HUD  &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans
+                                          &trans           &trans           &trans           &trans  &trans  &trans  &trans        &to 0
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-            label = "RGB";
+            label = "Accents RGB";
         };
 
-        qwerty_layer {
+        Nav_Productivity {
             bindings = <
-        &kp Q    &kp W                     &kp E                         &kp R                         &kp T                   &kp Y   &kp U   &kp I         &kp O       &kp P
-&trans  &kp A    &left_hand_hm LEFT_ALT S  &left_hand_hm LEFT_COMMAND D  &left_hand_hm LEFT_CONTROL F  &kp G                   &kp H   &kp J   &kp K         &kp L       &kp SEMI               &trans
-&trans  &lt 1 Z  &kp X                     &cecedilha                    &kp V                         &kp B   &trans  &trans  &kp N   &kp M   &comma_slash  &dot_colon  &question_exclamation  &trans
-                                           &trans                        &trans                        &trans  &trans  &trans  &trans  &trans  &to 0
+        &kp F2     &kp LG(LS(L))  &kp LG(F)  &kp LG(PT_PERIOD)  &kp LG(PT_COMMA)                  &mkp MCLK  &bt BT_NXT      &kp K_SCROLL_UP  &kp K_SCROLL_DOWN  &bt BT_CLR_ALL
+&trans  &trans     &trans         &trans     &trans             &kp LA(KP_N3)                     &mkp LCLK  &kp LEFT_ARROW  &kp UP           &kp DOWN_ARROW     &kp RIGHT       &trans
+&trans  &kp LG(R)  &kp LG(N)      &kp LG(T)  &kp LG(W)          &kp LG(Q)         &trans  &trans  &mkp RCLK  &kp HOME        &kp PG_UP        &kp PAGE_DOWN      &kp END         &trans
+                                  &trans     &trans             &trans            &trans  &trans  &trans     &trans          &to 0
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-            label = "QWERTY";
+            label = "Nav Prod";
+        };
+
+        Numbers_Symbols {
+            bindings = <
+        &kp KP_PLUS                     &kp KP_MINUS                  &kp KP_MULTIPLY                   &kp KP_SLASH                      &kp KP_EQUAL                     &kp PT_PIPE     &kp KP_LEFT_PARENTHESIS  &kp KP_RIGHT_PARENTHESIS  &kp PT_LEFT_BRACKET  &kp PT_RIGHT_BRACKET
+&trans  &left_hand_hm LEFT_SHIFT KP_N0  &left_hand_hm LEFT_ALT KP_N1  &left_hand_hm LEFT_COMMAND KP_N2  &left_hand_hm LEFT_CONTROL KP_N3  &kp KP_N4                        &kp KP_N5       &kp KP_N6                &kp KP_N7                 &kp KP_N8            &kp KP_N9             &trans
+&trans  &kp KP_N5                       &kp KP_NUMBER_6               &kp KP_N7                         &kp KP_N8                         &kp KP_NUMBER_9  &trans  &trans  &kp PT_PERCENT  &kp PT_LESS_THAN         &kp PT_GREATER_THAN       &kp PT_LEFT_BRACE    &kp PT_RIGHT_BRACE    &trans
+                                                                      &trans                            &trans                            &trans           &trans  &trans  &trans          &trans                   &to 0
+            >;
+
+            label = "Numbers Symbols";
         };
     };
 };
