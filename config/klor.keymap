@@ -242,7 +242,7 @@
 
         Nav_Productivity {
             bindings = <
-        &kp F2     &kp LG(LS(L))  &kp LG(F)  &kp LG(PT_PERIOD)  &kp LG(PT_COMMA)                  &mkp MCLK  &bt BT_NXT      &kp K_SCROLL_UP  &kp K_SCROLL_DOWN  &bt BT_CLR_ALL
+        &kp F2     &kp LG(LS(L))  &kp LG(F)  &kp LA(PT_PERIOD)  &kp LG(PT_COMMA)                  &mkp MCLK  &bt BT_NXT      &kp K_SCROLL_UP  &kp K_SCROLL_DOWN  &bt BT_CLR_ALL
 &trans  &trans     &trans         &trans     &trans             &kp LA(KP_N3)                     &mkp LCLK  &kp LEFT_ARROW  &kp UP           &kp DOWN_ARROW     &kp RIGHT       &trans
 &trans  &kp LG(R)  &kp LG(N)      &kp LG(T)  &kp LG(W)          &kp LG(Q)         &trans  &trans  &mkp RCLK  &kp HOME        &kp PG_UP        &kp PAGE_DOWN      &kp END         &trans
                                   &trans     &trans             &trans            &trans  &trans  &trans     &trans          &to 0
