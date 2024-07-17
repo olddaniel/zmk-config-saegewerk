@@ -24,6 +24,11 @@
 #define PROD     2
 #define QWERTY   3
 
+&sk {
+    quick-release;
+    release-after-ms = <1500>;
+};
+
 / {
     behaviors {
         left_hand_hm: homerow_mods {
