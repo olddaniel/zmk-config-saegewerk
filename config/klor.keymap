@@ -200,14 +200,14 @@
             require-prior-idle-ms = <150>;
         };
 
-        to_layer_2 {
-            bindings = <&to 2>;
+        to_layer_3 {
+            bindings = <&to 3>;
             key-positions = <26 25>;
             layers = <0 3 2 1>;
         };
 
-        to_layer_3 {
-            bindings = <&to 3>;
+        to_layer_2 {
+            bindings = <&to 2>;
             key-positions = <25 24>;
             layers = <0 3 2 1>;
         };
@@ -247,10 +247,10 @@
 
         Nav_Productivity {
             bindings = <
-        &kp F2     &kp LG(LS(L))  &kp LG(F)  &kp LA(PT_PERIOD)  &kp LG(PT_COMMA)                  &mkp MCLK  &bt BT_NXT      &kp K_SCROLL_UP  &kp K_SCROLL_DOWN  &bt BT_CLR_ALL
-&trans  &trans     &trans         &trans     &trans             &kp LA(KP_N3)                     &mkp LCLK  &kp LEFT_ARROW  &kp UP           &kp DOWN_ARROW     &kp RIGHT       &trans
-&trans  &kp LG(R)  &kp LG(N)      &kp LG(T)  &kp LG(W)          &kp LG(Q)         &trans  &trans  &mkp RCLK  &kp HOME        &kp PG_UP        &kp PAGE_DOWN      &kp END         &trans
-                                  &trans     &trans             &trans            &trans  &trans  &trans     &trans          &to 0
+        &kp F2     &kp LG(LS(L))  &kp LG(F)  &kp LA(PT_PERIOD)  &kp LA(PT_N4)                  &mkp MCLK  &bt BT_NXT      &kp K_SCROLL_UP  &kp K_SCROLL_DOWN  &bt BT_CLR_ALL
+&trans  &trans     &trans         &trans     &trans             &kp LA(PT_N3)                  &mkp LCLK  &kp LEFT_ARROW  &kp UP           &kp DOWN_ARROW     &kp RIGHT       &trans
+&trans  &kp LG(N)  &kp LG(T)      &kp LG(W)  &kp LG(Q)          &kp LG(R)      &trans  &trans  &mkp RCLK  &kp HOME        &kp PG_UP        &kp PAGE_DOWN      &kp END         &trans
+                                  &trans     &trans             &trans         &trans  &trans  &trans     &trans          &to 0
             >;
 
             label = "Nav Prod";
