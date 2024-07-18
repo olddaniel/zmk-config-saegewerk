@@ -52,7 +52,7 @@
             bindings = <&kp C>, <&kp PT_C_CEDILLA>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            mods = <(MOD_LALT)>;
         };
 
         question_exclamation: question_exclamation {
@@ -79,7 +79,7 @@
             bindings = <&kp O>, <&kp PT_MASCULINE_ORDINAL_INDICATOR>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            mods = <(MOD_LALT)>;
         };
 
         control_A_feminine_ordinal: control_A_feminine_ordinal {
@@ -90,7 +90,7 @@
                 <&kp PT_FEMININE_ORDINAL_INDICATOR>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            mods = <(MOD_LALT)>;
         };
 
         backspace_delete: backspace_delete {
@@ -117,7 +117,7 @@
             bindings = <&kp P>, <&kp PERCENT>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            mods = <(MOD_LALT)>;
         };
 
         B_Ampersand: B_Ampersand {
@@ -126,7 +126,7 @@
             bindings = <&kp B>, <&kp AMPERSAND>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            mods = <(MOD_LALT)>;
         };
 
         L_pipe: L_pipe {
@@ -135,7 +135,7 @@
             bindings = <&kp L>, <&kp PIPE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RALT|MOD_LALT)>;
+            mods = <(MOD_LALT)>;
         };
 
         U_underscore: U_underscore {
@@ -144,7 +144,7 @@
             bindings = <&kp U>, <&kp UNDERSCORE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            mods = <(MOD_LALT)>;
         };
 
         shift_C_Cecedilha: shift_C_Cecedilha {
@@ -169,6 +169,24 @@
             bindings = <&sk LEFT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
 
             tapping-term-ms = <180>;
+        };
+
+        H_hashtag: H_hashtag {
+            compatible = "zmk,behavior-mod-morph";
+            label = "H_HASHTAG";
+            bindings = <&kp H>, <&kp PT_HASH>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        S_dollar: S_dollar {
+            compatible = "zmk,behavior-mod-morph";
+            label = "S_DOLLAR";
+            bindings = <&kp S>, <&kp PT_DOLLAR>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
         };
     };
 
@@ -224,7 +242,7 @@
         engram {
             bindings = <
         &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp Z                                       &kp J                  &L_pipe          &kp D      &kp W  &kp Q
-&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                &dot_colon             &kp H            &kp T      &kp S  &kp N          &trans
+&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                &dot_colon             &H_hashtag       &kp T      &kp S  &kp N          &trans
 &trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp PT_APOSTROPHE  &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M      &kp F  &P_percentage  &trans
                                                                    &backspace_delete             &lt 2 SPACE                  &lt 3 TAB          &trans      &trans       &kp ENTER              &ultimate_shift  &lt 1 ESC
             >;
@@ -258,10 +276,10 @@
 
         Numbers_Symbols {
             bindings = <
-        &kp PT_LEFT_BRACKET               &kp PT_RIGHT_BRACKET             &kp PT_LEFT_PARENTHESIS              &kp PT_RIGHT_PARENTHESIS                &kp PERCENT                   &trans     &trans     &trans     &trans     &trans
-&trans  &left_hand_hm LEFT_SHIFT KP_PLUS  &left_hand_hm LEFT_ALT KP_MINUS  &left_hand_hm LEFT_COMMAND KP_EQUAL  &left_hand_hm LEFT_CONTROL KP_MULTIPLY  &kp KP_SLASH                  &kp PT_N0  &kp PT_N1  &kp PT_N2  &kp PT_N3  &kp PT_N4  &trans
-&trans  &kp PT_LEFT_BRACE                 &kp PT_RIGHT_BRACE               &kp PT_LESS_THAN                     &kp PT_GREATER_THAN                     &kp PT_PIPE   &trans  &trans  &kp PT_N5  &kp PT_N6  &kp PT_N7  &kp PT_N8  &kp PT_N9  &trans
-                                                                           &trans                               &trans                                  &trans        &trans  &trans  &trans     &trans     &to 0
+        &kp PT_LEFT_BRACKET               &kp PT_RIGHT_BRACKET             &kp PT_LEFT_PARENTHESIS              &kp PT_RIGHT_PARENTHESIS                &kp PT_EXCL                       &kp PT_HASH  &kp PT_DOLLAR  &kp PT_AT  &kp PT_PERCENT  &kp PT_AMPS
+&trans  &left_hand_hm LEFT_SHIFT PT_PLUS  &left_hand_hm LEFT_ALT PT_MINUS  &left_hand_hm LEFT_COMMAND PT_EQUAL  &left_hand_hm LEFT_CONTROL PT_ASTERISK  &kp PT_SLASH                      &kp PT_N0    &kp PT_N1      &kp PT_N2  &kp PT_N3       &kp PT_N4    &trans
+&trans  &kp PT_LEFT_BRACE                 &kp PT_RIGHT_BRACE               &kp PT_LESS_THAN                     &kp PT_GREATER_THAN                     &kp PT_BACKSLASH  &trans  &trans  &kp PT_N5    &kp PT_N6      &kp PT_N7  &kp PT_N8       &kp PT_N9    &trans
+                                                                           &trans                               &trans                                  &trans            &trans  &trans  &trans       &trans         &to 0
             >;
 
             label = "Numbers Symbols";
