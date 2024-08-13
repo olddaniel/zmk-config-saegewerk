@@ -253,10 +253,10 @@
 
         accents_RGB {
             bindings = <
-        &rgb_ug RGB_SAI  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI                  &trans  &trans        &trans        &trans        &trans
-&trans  &trans           &trans           &trans           &trans           &trans                           &trans  &kp PT_ACUTE  &kp PT_TILDE  &kp PT_CARET  &kp PT_GRAVE  &trans
-&trans  &rgb_ug RGB_SAD  &rgb_ug RGB_SPD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_HUD  &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans
-                                          &trans           &trans           &trans           &trans  &trans  &trans  &trans        &to 0
+        &kp PT_AMPS          &kp PT_PERCENT        &kp PT_AT                &kp PT_DOLLAR             &kp PT_HASH                       &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI
+&trans  &kp PT_LEFT_BRACKET  &kp PT_RIGHT_BRACKET  &kp PT_LEFT_PARENTHESIS  &kp PT_RIGHT_PARENTHESIS  &kp PT_SLASH                      &bt BT_NXT       &kp PT_ACUTE     &kp PT_TILDE     &kp PT_CARET     &kp PT_GRAVE     &trans
+&trans  &kp PT_LEFT_BRACE    &kp PT_RIGHT_BRACE    &kp PT_LESS_THAN         &kp PT_GREATER_THAN       &kp PT_BACKSLASH  &trans  &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &trans
+                                                   &trans                   &trans                    &trans            &trans  &trans  &trans           &trans           &to 0
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -276,13 +276,35 @@
 
         Numbers_Symbols {
             bindings = <
+        &kp PT_SLASH  &kp PT_MINUS  &kp PT_EQUAL  &kp PT_PLUS  &kp PT_ASTRK                  &trans     &trans     &trans     &trans     &trans
+&trans  &kp PT_N0     &kp PT_N1     &kp PT_N2     &kp PT_N3    &kp PT_N4                     &kp PT_N5  &kp PT_N6  &kp PT_N7  &kp PT_N8  &kp PT_N9  &trans
+&trans  &kp PT_N5     &kp PT_N6     &kp PT_N7     &kp PT_N8    &kp PT_N9     &trans  &trans  &trans     &trans     &trans     &trans     &trans     &trans
+                                    &trans        &trans       &trans        &trans  &trans  &trans     &trans     &to 0
+            >;
+
+            label = "Numbers Symbols";
+        };
+
+        layer_4 {
+            label = "Numbers Symbols Backup";
+            bindings = <
         &kp PT_LEFT_BRACKET               &kp PT_RIGHT_BRACKET             &kp PT_LEFT_PARENTHESIS              &kp PT_RIGHT_PARENTHESIS                &kp PT_EXCL                       &kp PT_HASH  &kp PT_DOLLAR  &kp PT_AT  &kp PT_PERCENT  &kp PT_AMPS
 &trans  &left_hand_hm LEFT_SHIFT PT_PLUS  &left_hand_hm LEFT_ALT PT_MINUS  &left_hand_hm LEFT_COMMAND PT_EQUAL  &left_hand_hm LEFT_CONTROL PT_ASTERISK  &kp PT_SLASH                      &kp PT_N0    &kp PT_N1      &kp PT_N2  &kp PT_N3       &kp PT_N4    &trans
 &trans  &kp PT_LEFT_BRACE                 &kp PT_RIGHT_BRACE               &kp PT_LESS_THAN                     &kp PT_GREATER_THAN                     &kp PT_BACKSLASH  &trans  &trans  &kp PT_N5    &kp PT_N6      &kp PT_N7  &kp PT_N8       &kp PT_N9    &trans
                                                                            &trans                               &trans                                  &trans            &trans  &trans  &trans       &trans         &to 0
             >;
+        };
 
-            label = "Numbers Symbols";
+        layer_5 {
+            label = "Accents RGB backup";
+            bindings = <
+        &trans  &trans  &trans  &trans  &trans                  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI
+&trans  &trans  &trans  &trans  &trans  &trans                  &bt BT_NXT       &kp PT_ACUTE     &kp PT_TILDE     &kp PT_CARET     &kp PT_GRAVE     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &trans
+                        &trans  &trans  &trans  &trans  &trans  &trans           &trans           &to 0
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
