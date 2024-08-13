@@ -241,10 +241,10 @@
 
         engram {
             bindings = <
-        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp Z                                       &kp J                  &L_pipe          &kp D      &kp W  &kp Q
+        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp PT_APOSTROPHE                           &question_exclamation  &L_pipe          &kp D      &kp W  &kp Q
 &trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                &dot_colon             &H_hashtag       &kp T      &kp S  &kp N          &trans
-&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp PT_APOSTROPHE  &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M      &kp F  &P_percentage  &trans
-                                                                   &backspace_delete             &lt 2 SPACE                  &lt 3 TAB          &trans      &trans       &kp ENTER              &ultimate_shift  &lt 1 ESC
+&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp Z              &kp C_PLAY  &kp C_PAUSE  &kp J                  &kp R            &kp M      &kp F  &P_percentage  &trans
+                                                                   &backspace_delete             &lt 2 SPACE                  &lt 3 TAB          &trans      &trans       &lt 2 ENTER            &ultimate_shift  &lt 1 ESC
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
