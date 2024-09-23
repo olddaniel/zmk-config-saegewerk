@@ -218,16 +218,16 @@
             require-prior-idle-ms = <150>;
         };
 
-        to_numbers {
+        to_layer_3 {
             bindings = <&to 3>;
             key-positions = <26 25>;
-            layers = <0 3 2 4>;
+            layers = <0 3 2 1>;
         };
 
-        to_navigation {
+        to_layer_2 {
             bindings = <&to 2>;
             key-positions = <25 24>;
-            layers = <0 3 2 4>;
+            layers = <0 3 2 1>;
         };
     };
 
@@ -241,10 +241,10 @@
 
         engram {
             bindings = <
-        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp PT_APOSTROPHE                           &question_exclamation  &L_pipe          &kp D      &kp W  &kp Q
+        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp Z                                       &kp J                  &L_pipe          &kp D      &kp W  &kp Q
 &trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                &dot_colon             &H_hashtag       &kp T      &kp S  &kp N          &trans
-&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp Z              &kp C_PLAY  &kp C_PAUSE  &kp J                  &kp R            &kp M      &kp F  &P_percentage  &trans
-                                                                   &backspace_delete             &lt 2 SPACE                  &lt 3 TAB          &trans      &trans       &lt 2 ENTER            &ultimate_shift  &lt 1 ESC
+&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp PT_APOSTROPHE  &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M      &kp F  &P_percentage  &trans
+                                                                   &backspace_delete             &lt 2 SPACE                  &lt 3 TAB          &trans      &trans       &kp ENTER              &ultimate_shift  &lt 1 ESC
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
@@ -253,10 +253,10 @@
 
         accents_RGB {
             bindings = <
-        &kp PT_AMPS  &kp PT_PERCENT  &kp PT_AT         &kp PT_DOLLAR      &kp PT_PIPE                       &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI
-&trans  &trans       &trans          &trans            &trans             &kp PT_SLASH                      &bt BT_NXT       &kp PT_ACUTE     &kp PT_TILDE     &kp PT_CARET     &kp PT_GRAVE     &trans
-&trans  &kp PT_HASH  &kp PT_UNDER    &kp PT_SEMICOLON  &kp PT_POUND_SIGN  &kp PT_BACKSLASH  &trans  &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &trans
-                                     &trans            &trans             &trans            &trans  &trans  &trans           &trans           &to 0
+        &rgb_ug RGB_SAI  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI                  &trans  &trans        &trans        &trans        &trans
+&trans  &trans           &trans           &trans           &trans           &trans                           &trans  &kp PT_ACUTE  &kp PT_TILDE  &kp PT_CARET  &kp PT_GRAVE  &trans
+&trans  &rgb_ug RGB_SAD  &rgb_ug RGB_SPD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_HUD  &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans
+                                          &trans           &trans           &trans           &trans  &trans  &trans  &trans        &to 0
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -265,10 +265,10 @@
 
         Nav_Productivity {
             bindings = <
-        &kp F2     &kp LG(F)  &kp LG(LS(L))  &kp LA(PT_PERIOD)  &kp LA(PT_N4)                  &mkp RCLK  &bt BT_NXT      &kp K_SCROLL_UP  &kp K_SCROLL_DOWN  &bt BT_CLR_ALL
-&trans  &trans     &trans     &trans         &trans             &kp LA(PT_N3)                  &mkp LCLK  &kp LEFT_ARROW  &kp UP           &kp DOWN_ARROW     &kp RIGHT       &trans
-&trans  &kp LG(N)  &kp LG(T)  &kp LG(W)      &kp LG(Q)          &kp LG(R)      &trans  &trans  &mkp MCLK  &kp HOME        &kp PG_UP        &kp PAGE_DOWN      &kp END         &trans
-                              &trans         &trans             &trans         &trans  &trans  &trans     &trans          &to 0
+        &kp F2     &kp LG(LS(L))  &kp LG(F)  &kp LA(PT_PERIOD)  &kp LA(PT_N4)                  &mkp MCLK  &bt BT_NXT      &kp K_SCROLL_UP  &kp K_SCROLL_DOWN  &bt BT_CLR_ALL
+&trans  &trans     &trans         &trans     &trans             &kp LA(PT_N3)                  &mkp LCLK  &kp LEFT_ARROW  &kp UP           &kp DOWN_ARROW     &kp RIGHT       &trans
+&trans  &kp LG(N)  &kp LG(T)      &kp LG(W)  &kp LG(Q)          &kp LG(R)      &trans  &trans  &mkp RCLK  &kp HOME        &kp PG_UP        &kp PAGE_DOWN      &kp END         &trans
+                                  &trans     &trans             &trans         &trans  &trans  &trans     &trans          &to 0
             >;
 
             label = "Nav Prod";
@@ -276,35 +276,13 @@
 
         Numbers_Symbols {
             bindings = <
-        &kp PT_SLASH  &kp PT_MINUS  &kp PT_EQUAL                      &kp PT_PLUS  &kp PT_ASTRK                  &trans     &kp PT_LEFT_PARENTHESIS  &kp PT_RIGHT_PARENTHESIS  &kp PT_LEFT_BRACKET  &kp PT_RIGHT_BRACKET
-&trans  &kp PT_N0     &kp PT_N1     &left_hand_hm LEFT_COMMAND PT_N2  &kp PT_N3    &kp PT_N4                     &kp PT_N5  &kp PT_N6                &kp PT_N7                 &kp PT_N8            &kp PT_N9             &trans
-&trans  &kp PT_N5     &kp PT_N6     &kp PT_N7                         &kp PT_N8    &kp PT_N9     &trans  &trans  &trans     &kp PT_LESS_THAN         &kp PT_GREATER_THAN       &kp PT_LEFT_BRACE    &kp PT_RIGHT_BRACE    &trans
-                                    &trans                            &trans       &trans        &trans  &trans  &trans     &trans                   &to 0
-            >;
-
-            label = "Numbers Symbols";
-        };
-
-        layer_4 {
-            label = "Numbers Symbols Backup";
-            bindings = <
         &kp PT_LEFT_BRACKET               &kp PT_RIGHT_BRACKET             &kp PT_LEFT_PARENTHESIS              &kp PT_RIGHT_PARENTHESIS                &kp PT_EXCL                       &kp PT_HASH  &kp PT_DOLLAR  &kp PT_AT  &kp PT_PERCENT  &kp PT_AMPS
 &trans  &left_hand_hm LEFT_SHIFT PT_PLUS  &left_hand_hm LEFT_ALT PT_MINUS  &left_hand_hm LEFT_COMMAND PT_EQUAL  &left_hand_hm LEFT_CONTROL PT_ASTERISK  &kp PT_SLASH                      &kp PT_N0    &kp PT_N1      &kp PT_N2  &kp PT_N3       &kp PT_N4    &trans
 &trans  &kp PT_LEFT_BRACE                 &kp PT_RIGHT_BRACE               &kp PT_LESS_THAN                     &kp PT_GREATER_THAN                     &kp PT_BACKSLASH  &trans  &trans  &kp PT_N5    &kp PT_N6      &kp PT_N7  &kp PT_N8       &kp PT_N9    &trans
                                                                            &trans                               &trans                                  &trans            &trans  &trans  &trans       &trans         &to 0
             >;
-        };
 
-        layer_5 {
-            label = "Accents RGB backup";
-            bindings = <
-        &trans  &trans  &trans  &trans  &trans                  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI
-&trans  &trans  &trans  &trans  &trans  &trans                  &bt BT_NXT       &kp PT_ACUTE     &kp PT_TILDE     &kp PT_CARET     &kp PT_GRAVE     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans           &trans           &to 0
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            label = "Numbers Symbols";
         };
     };
 };
