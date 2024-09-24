@@ -42,7 +42,7 @@
 
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
-            hold-trigger-key-positions = <5 6 7 8 9 16 17 18 19 20 21 29 30 31 32 33 34 35 40 41 42 43 36 37 38>;
+            hold-trigger-key-positions = <5 6 7 8 9 16 17 18 19 20 21 29 30 31 32 33 34 35 40 41 42 43 36 37 38 23 11>;
             hold-trigger-on-release;
         };
 
@@ -188,6 +188,32 @@
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
         };
+
+        layer2: layer2 {
+            compatible = "zmk,behavior-caps-word";
+            label = "LAYER2";
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_LGUI)>;
+            continue-list = <LEFT_ARROW UP_ARROW RIGHT_ARROW DOWN_ARROW K_SCROLL_UP K_SCROLL_DOWN HOME END BACKSPACE ENTER>;
+        };
+
+        layer2_space: layer2_space {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER2_SPACE";
+            bindings = <&layer2>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+        };
+
+        layer1_repeat: layer1_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER1_REPEAT";
+            bindings = <&key_repeat>, <&sl>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+        };
     };
 
     combos {
@@ -214,13 +240,13 @@
 
         enter_one_handed {
             bindings = <&kp ENTER>;
-            key-positions = <14 15>;
+            key-positions = <26 25>;
             require-prior-idle-ms = <150>;
         };
 
         to_layer_3 {
             bindings = <&to 3>;
-            key-positions = <26 25>;
+            key-positions = <24 23>;
             layers = <0 3 2 1>;
         };
 
@@ -241,10 +267,10 @@
 
         engram {
             bindings = <
-        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp Z                                       &kp J                  &L_pipe          &kp D      &kp W  &kp Q
-&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                &dot_colon             &H_hashtag       &kp T      &kp S  &kp N          &trans
-&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp PT_APOSTROPHE  &kp C_PLAY  &kp C_PAUSE  &question_exclamation  &kp R            &kp M      &kp F  &P_percentage  &trans
-                                                                   &backspace_delete             &lt 2 SPACE                  &lt 3 TAB          &trans      &trans       &kp ENTER              &ultimate_shift  &lt 1 ESC
+        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp PT_APOSTROPHE                           &question_exclamation  &L_pipe          &kp D               &kp W  &kp J
+&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                &dot_colon             &H_hashtag       &kp T               &kp S  &kp N          &trans
+&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp Z              &kp C_PLAY  &kp C_PAUSE  &kp Q                  &kp R            &kp M               &kp F  &P_percentage  &trans
+                                                                   &backspace_delete             &layer2_space 0 SPACE        &lt 3 TAB          &trans      &trans       &kp ENTER              &ultimate_shift  &layer1_repeat 1 1
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
@@ -253,10 +279,10 @@
 
         accents_RGB {
             bindings = <
-        &rgb_ug RGB_SAI  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI                  &trans  &trans        &trans        &trans        &trans
-&trans  &trans           &trans           &trans           &trans           &trans                           &trans  &kp PT_ACUTE  &kp PT_TILDE  &kp PT_CARET  &kp PT_GRAVE  &trans
-&trans  &rgb_ug RGB_SAD  &rgb_ug RGB_SPD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_HUD  &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans
-                                          &trans           &trans           &trans           &trans  &trans  &trans  &trans        &to 0
+        &trans  &trans  &trans  &trans  &trans                  &rgb_ug RGB_HUI  &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI
+&trans  &trans  &trans  &trans  &trans  &trans                  &bt BT_NXT       &kp PT_ACUTE     &kp PT_TILDE     &kp PT_CARET     &kp PT_GRAVE     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &trans
+                        &trans  &trans  &trans  &trans  &trans  &trans           &trans           &to 0
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -265,10 +291,10 @@
 
         Nav_Productivity {
             bindings = <
-        &kp F2     &kp LG(LS(L))  &kp LG(F)  &kp LA(PT_PERIOD)  &kp LA(PT_N4)                  &mkp MCLK  &bt BT_NXT      &kp K_SCROLL_UP  &kp K_SCROLL_DOWN  &bt BT_CLR_ALL
-&trans  &trans     &trans         &trans     &trans             &kp LA(PT_N3)                  &mkp LCLK  &kp LEFT_ARROW  &kp UP           &kp DOWN_ARROW     &kp RIGHT       &trans
-&trans  &kp LG(N)  &kp LG(T)      &kp LG(W)  &kp LG(Q)          &kp LG(R)      &trans  &trans  &mkp RCLK  &kp HOME        &kp PG_UP        &kp PAGE_DOWN      &kp END         &trans
-                                  &trans     &trans             &trans         &trans  &trans  &trans     &trans          &to 0
+        &kp F2     &kp LG(F)  &kp LG(LS(L))  &kp LA(PT_PERIOD)  &kp LA(PT_N4)                  &kp K_SCROLL_UP    &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP
+&trans  &trans     &trans     &trans         &trans             &kp LA(PT_N3)                  &kp K_SCROLL_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN  &trans
+&trans  &kp LG(R)  &kp LG(N)  &kp LG(T)      &kp LG(W)          &kp LG(Q)      &trans  &trans  &trans             &mkp LCLK       &mkp RCLK       &mkp MCLK        &trans         &trans
+                              &trans         &trans             &trans         &trans  &trans  &trans             &trans          &to 0
             >;
 
             label = "Nav Prod";
