@@ -248,10 +248,10 @@
 
         Nav_Productivity {
             bindings = <
-        &kp F2     &kp LG(F)  &kp LG(LS(L))  &kp LA(PT_PERIOD)  &kp LA(PT_N4)                  &kp K_SCROLL_UP    &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP
-&trans  &trans     &trans     &trans         &trans             &kp LA(PT_N3)                  &kp K_SCROLL_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN  &trans
-&trans  &kp LG(R)  &kp LG(N)  &kp LG(T)      &kp LG(W)          &kp LG(Q)      &trans  &trans  &trans             &mkp LCLK       &mkp RCLK       &mkp MCLK        &trans         &trans
-                              &trans         &trans             &trans         &trans  &trans  &trans             &trans          &to 0
+        &kp F2     &kp LG(F)  &kp LG(LS(L))  &kp LA(PT_PERIOD)  &kp LA(PT_N4)                  &kp C_AC_SCROLL_UP    &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP
+&trans  &trans     &trans     &trans         &trans             &kp LA(PT_N3)                  &kp C_AC_SCROLL_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN  &trans
+&trans  &kp LG(R)  &kp LG(N)  &kp LG(T)      &kp LG(W)          &kp LG(Q)      &trans  &trans  &key_repeat           &mkp LCLK       &mkp RCLK       &mkp MCLK        &trans         &trans
+                              &trans         &trans             &trans         &trans  &trans  &trans                &trans          &to 0
             >;
 
             label = "Nav Prod";
@@ -259,7 +259,7 @@
 
         Numbers_Symbols {
             bindings = <
-        &kp PT_LEFT_BRACKET               &kp PT_RIGHT_BRACKET             &kp PT_LEFT_PARENTHESIS              &kp PT_RIGHT_PARENTHESIS                &trans                            &trans     &kp PT_ACUTE  &kp PT_TILDE  &kp PT_CARET  &kp PT_GRAVE
+        &kp PT_LEFT_BRACKET               &kp PT_RIGHT_BRACKET             &kp PT_LEFT_PARENTHESIS              &kp PT_RIGHT_PARENTHESIS                &kp PT_PIPE                       &trans     &kp PT_ACUTE  &kp PT_TILDE  &kp PT_CARET  &kp PT_GRAVE
 &trans  &left_hand_hm LEFT_SHIFT PT_PLUS  &left_hand_hm LEFT_ALT PT_MINUS  &left_hand_hm LEFT_COMMAND PT_EQUAL  &left_hand_hm LEFT_CONTROL PT_ASTERISK  &kp PT_SLASH                      &kp PT_N0  &kp PT_N1     &kp PT_N2     &kp PT_N3     &kp PT_N4     &trans
 &trans  &kp PT_LEFT_BRACE                 &kp PT_RIGHT_BRACE               &kp PT_LESS_THAN                     &kp PT_GREATER_THAN                     &kp PT_BACKSLASH  &trans  &trans  &kp PT_N5  &kp PT_N6     &kp PT_N7     &kp PT_N8     &kp PT_N9     &trans
                                                                            &trans                               &trans                                  &trans            &trans  &trans  &trans     &trans        &to 0
@@ -272,7 +272,7 @@
             label = "test";
             bindings = <
         &trans  &trans  &trans  &trans  &trans                  &rgb_ug RGB_HUI  &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI
-&trans  &trans  &trans  &trans  &trans  &trans                  &bt BT_NXT       &kp PT_ACUTE     &kp PT_TILDE     &kp PT_CARET     &kp PT_GRAVE     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans           &bt BT_NXT       &bt BT_PRV       &bt BT_CLR       &bt BT_CLR_ALL   &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &trans
                         &trans  &trans  &trans  &trans  &trans  &trans           &trans           &to 0
             >;
