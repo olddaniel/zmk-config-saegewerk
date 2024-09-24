@@ -189,14 +189,11 @@
             mods = <(MOD_LALT)>;
         };
 
-        hold_momentary_tap_sticky: hold_momentary_tap_sticky {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_MOMENTARY_TAP_STICKY";
-            bindings = <&mo>, <&sl>;
-
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <180>;
+        to_layers: to_layers {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TO_LAYERS";
+            #binding-cells = <0>;
+            bindings = <&to 1>, <&to 2>;
         };
     };
 
@@ -239,10 +236,10 @@
 
         engram {
             bindings = <
-        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp PT_APOSTROPHE                           &question_exclamation  &L_pipe          &kp D                           &kp W      &kp J
-&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                &dot_colon             &H_hashtag       &kp T                           &S_dollar  &kp N          &trans
-&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp Z              &kp C_PLAY  &kp C_PAUSE  &kp Q                  &kp R            &kp M                           &kp F      &P_percentage  &trans
-                                                                   &backspace_delete             &lt 1 SPACE                  &lt 2 TAB          &trans      &trans       &kp ENTER              &ultimate_shift  &hold_momentary_tap_sticky 2 2
+        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp PT_APOSTROPHE                           &question_exclamation  &L_pipe          &kp D       &kp W      &kp J
+&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                &dot_colon             &H_hashtag       &kp T       &S_dollar  &kp N          &trans
+&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp Z              &kp C_PLAY  &kp C_PAUSE  &kp Q                  &kp R            &kp M       &kp F      &P_percentage  &trans
+                                                                   &backspace_delete             &lt 1 SPACE                  &lt 2 TAB          &trans      &trans       &kp ENTER              &ultimate_shift  &to_layers
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
