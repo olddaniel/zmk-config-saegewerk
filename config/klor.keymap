@@ -199,7 +199,7 @@
         comma_slash_cmdZ: comma_slash_cmdZ {
             compatible = "zmk,behavior-mod-morph";
             label = "COMMA_SLASH_CMDZ";
-            bindings = <&comma_slash>, <&kp Z>;
+            bindings = <&comma_slash>, <&kp LG(LA(Z))>;
 
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
