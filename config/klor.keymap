@@ -195,15 +195,6 @@
             #binding-cells = <0>;
             bindings = <&to 1>, <&to 2>;
         };
-
-        comma_slash_cmdZ: comma_slash_cmdZ {
-            compatible = "zmk,behavior-mod-morph";
-            label = "COMMA_SLASH_CMDZ";
-            bindings = <&comma_slash>, <&kp LG(Z)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-        };
     };
 
     combos {
@@ -256,7 +247,7 @@
         Base {
             bindings = <
         &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp PT_APOSTROPHE                           &question_exclamation  &L_pipe          &kp D      &kp W      &kp J
-&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash_cmdZ                           &dot_colon             &H_hashtag       &kp T      &S_dollar  &kp N          &trans
+&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_slash                                &dot_colon             &H_hashtag       &kp T      &S_dollar  &kp N          &trans
 &trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp Z              &kp C_PLAY  &kp C_PAUSE  &kp Q                  &kp R            &kp M      &kp F      &P_percentage  &trans
                                                                    &backspace_delete             &lt 1 SPACE                  &lt 2 TAB          &trans      &trans       &kp ENTER              &ultimate_shift  &lt 3 ESC
             >;
@@ -278,10 +269,10 @@
 
         Math {
             bindings = <
-        &kp PT_LEFT_BRACKET               &kp PT_RIGHT_BRACKET             &kp PT_LEFT_PARENTHESIS              &kp PT_RIGHT_PARENTHESIS                &kp PT_EXCL                       &trans     &kp PT_ACUTE  &kp PT_TILDE  &kp PT_CARET  &kp PT_GRAVE
-&trans  &left_hand_hm LEFT_SHIFT PT_PLUS  &left_hand_hm LEFT_ALT PT_MINUS  &left_hand_hm LEFT_COMMAND PT_EQUAL  &left_hand_hm LEFT_CONTROL PT_ASTERISK  &kp PT_SLASH                      &kp PT_N0  &kp PT_N1     &kp PT_N2     &kp PT_N3     &kp PT_N4     &trans
-&trans  &kp PT_LEFT_BRACE                 &kp PT_RIGHT_BRACE               &kp PT_LESS_THAN                     &kp PT_GREATER_THAN                     &kp PT_BACKSLASH  &trans  &trans  &kp PT_N5  &kp PT_N6     &kp PT_N7     &kp PT_N8     &kp PT_N9     &trans
-                                                                           &trans                               &trans                                  &trans            &trans  &trans  &trans     &trans        &to 0
+        &kp PT_LEFT_BRACKET               &kp PT_RIGHT_BRACKET             &kp PT_LEFT_PARENTHESIS              &kp PT_RIGHT_PARENTHESIS                &kp PT_EXCL                       &trans           &kp PT_ACUTE     &kp PT_TILDE     &kp PT_CARET     &kp PT_GRAVE
+&trans  &left_hand_hm LEFT_SHIFT PT_PLUS  &left_hand_hm LEFT_ALT PT_MINUS  &left_hand_hm LEFT_COMMAND PT_EQUAL  &left_hand_hm LEFT_CONTROL PT_ASTERISK  &kp PT_SLASH                      &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4  &trans
+&trans  &kp PT_LEFT_BRACE                 &kp PT_RIGHT_BRACE               &kp PT_LESS_THAN                     &kp PT_GREATER_THAN                     &kp PT_BACKSLASH  &trans  &trans  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans
+                                                                           &trans                               &trans                                  &trans            &trans  &trans  &trans           &trans           &to 0
             >;
 
             label = "Math";
