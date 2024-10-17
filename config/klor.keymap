@@ -276,7 +276,7 @@
             label = "Navigation";
         };
 
-        Math_Accents {
+        Math {
             bindings = <
         &kp PT_LEFT_BRACKET               &kp PT_RIGHT_BRACKET             &kp PT_LEFT_PARENTHESIS              &kp PT_RIGHT_PARENTHESIS                &kp PT_EXCL                       &trans     &kp PT_ACUTE  &kp PT_TILDE  &kp PT_CARET  &kp PT_GRAVE
 &trans  &left_hand_hm LEFT_SHIFT PT_PLUS  &left_hand_hm LEFT_ALT PT_MINUS  &left_hand_hm LEFT_COMMAND PT_EQUAL  &left_hand_hm LEFT_CONTROL PT_ASTERISK  &kp PT_SLASH                      &kp PT_N0  &kp PT_N1     &kp PT_N2     &kp PT_N3     &kp PT_N4     &trans
@@ -284,11 +284,11 @@
                                                                            &trans                               &trans                                  &trans            &trans  &trans  &trans     &trans        &to 0
             >;
 
-            label = "Math & Accents";
+            label = "Math";
         };
 
-        RGB_and_BT {
-            label = "RGB_and_BT";
+        RGB {
+            label = "RGB";
             bindings = <
         &trans  &trans  &trans  &trans  &trans                  &rgb_ug RGB_HUI  &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans           &bt BT_NXT       &bt BT_PRV       &bt BT_CLR       &bt BT_CLR_ALL   &trans
