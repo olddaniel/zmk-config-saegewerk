@@ -130,15 +130,6 @@
             mods = <(MOD_LALT)>;
         };
 
-        L_pipe: L_pipe {
-            compatible = "zmk,behavior-mod-morph";
-            label = "L_PIPE";
-            bindings = <&kp PT_L>, <&kp LS(PT_BACKSLASH)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
         U_underscore: U_underscore {
             compatible = "zmk,behavior-mod-morph";
             label = "U_UNDERSCORE";
@@ -222,6 +213,11 @@
             bindings = <&to 2>;
             key-positions = <43 38>;
         };
+
+        pipe {
+            bindings = <&kp PT_PIPE>;
+            key-positions = <12 6>;
+        };
     };
 
     keymap {
@@ -234,7 +230,7 @@
 
         Base {
             bindings = <
-        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp PT_APOSTROPHE                           &question_at  &L_pipe          &kp D      &kp W      &kp J
+        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &kp PT_APOSTROPHE                           &question_at  &kp L            &kp D      &kp W      &kp J
 &trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_semi                                 &dot_colon    &H_hashtag       &kp T      &S_dollar  &kp N          &trans
 &trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp Z              &kp C_PLAY  &kp C_PAUSE  &kp Q         &kp R            &kp M      &kp F      &P_percentage  &trans
                                                                    &backspace_delete             &lt 1 SPACE                  &lt 2 TAB          &trans      &trans       &kp ENTER     &ultimate_shift  &lt 3 ESC
