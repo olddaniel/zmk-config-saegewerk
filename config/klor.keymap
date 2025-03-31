@@ -133,7 +133,7 @@
         L_pipe: L_pipe {
             compatible = "zmk,behavior-mod-morph";
             label = "L_PIPE";
-            bindings = <&kp PT_L>, <&kp PIPE2>;
+            bindings = <&kp PT_L>, <&kp LS(PT_BACKSLASH)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
