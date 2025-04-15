@@ -205,22 +205,26 @@
             bindings = <&kp ESC>;
             key-positions = <24 23>;
             require-prior-idle-ms = <150>;
+            layers = <0>;
         };
 
         enter_one_handed {
             bindings = <&kp ENTER>;
             key-positions = <26 27>;
             require-prior-idle-ms = <150>;
+            layers = <0>;
         };
 
         to_layer1 {
             bindings = <&to 1>;
             key-positions = <37 43>;
+            layers = <0>;
         };
 
         to_layer2 {
             bindings = <&to 2>;
             key-positions = <43 38>;
+            layers = <0>;
         };
     };
 
