@@ -238,10 +238,10 @@
 
         Base {
             bindings = <
-        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &Apost_Pipe                           &question_at  &kp L            &kp D      &kp W      &kp J
-&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_semi                           &dot_colon    &H_hashtag       &kp T      &S_dollar  &kp N          &trans
-&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp Z        &kp C_PLAY  &kp C_PAUSE  &kp Q         &kp R            &kp M      &kp F      &P_percentage  &trans
-                                                                   &backspace_delete             &lt 1 SPACE                  &lt 2 TAB    &trans      &trans       &kp ENTER     &ultimate_shift  &lt 3 F24
+        &B_Ampersand                     &kp Y                     &o_masculine_ordinal          &U_underscore                &Apost_Pipe                           &question_at  &kp L            &kp D                &kp W      &kp J
+&trans  &shift_C_Cecedilha LEFT_SHIFT 0  &left_hand_hm LEFT_ALT I  &left_hand_hm LEFT_COMMAND E  &control_A_feminine_ordinal  &comma_semi                           &dot_colon    &H_hashtag       &kp T                &S_dollar  &kp N          &trans
+&trans  &kp V                            &kp X                     &kp G                         &kp K                        &kp Z        &kp C_PLAY  &kp C_PAUSE  &kp Q         &kp R            &kp M                &kp F      &P_percentage  &trans
+                                                                   &backspace_delete             &lt 1 SPACE                  &lt 2 TAB    &trans      &trans       &kp ENTER     &ultimate_shift  &lt 3 RIGHT_COMMAND
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
