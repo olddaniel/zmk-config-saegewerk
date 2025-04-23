@@ -250,10 +250,10 @@
 
         Navigation {
             bindings = <
-        &kp F2     &kp LG(F)  &kp LG(LS(L))  &kp LA(PT_PERIOD)  &kp LA(PT_N4)                  &trans       &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP
-&trans  &trans     &trans     &trans         &trans             &kp LA(PT_N3)                  &trans       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN  &trans
-&trans  &kp LG(R)  &kp LG(N)  &kp LG(T)      &kp LG(W)          &kp LG(Q)      &trans  &trans  &key_repeat  &mkp LCLK       &mkp RCLK       &mkp MCLK        &trans         &trans
-                              &trans         &trans             &trans         &trans  &trans  &trans       &trans          &to 0
+        &kp F2     &kp LG(F)  &kp LG(LS(L))  &kp LA(PT_PERIOD)  &kp LA(PT_N4)                  &trans         &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP
+&trans  &trans     &trans     &trans         &trans             &kp LA(PT_N3)                  &kp RIGHT_ALT  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN  &trans
+&trans  &kp LG(R)  &kp LG(N)  &kp LG(T)      &kp LG(W)          &kp LG(Q)      &trans  &trans  &key_repeat    &mkp LCLK       &mkp RCLK       &mkp MCLK        &trans         &trans
+                              &trans         &trans             &trans         &trans  &trans  &trans         &trans          &to 0
             >;
 
             label = "Navigation";
