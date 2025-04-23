@@ -217,14 +217,26 @@
 
         to_layer1 {
             bindings = <&to 1>;
-            key-positions = <37 43>;
+            key-positions = <37 41>;
             layers = <0>;
         };
 
         to_layer2 {
             bindings = <&to 2>;
-            key-positions = <43 38>;
+            key-positions = <38 41>;
             layers = <0>;
+        };
+
+        Back_to_base1 {
+            bindings = <&to 0>;
+            key-positions = <37 41>;
+            layers = <1>;
+        };
+
+        Back_to_base2 {
+            bindings = <&to 0>;
+            key-positions = <41 38>;
+            layers = <2>;
         };
     };
 
@@ -250,10 +262,10 @@
 
         Navigation {
             bindings = <
-        &kp F2     &kp LG(F)  &kp LG(LS(L))  &kp LA(PT_PERIOD)  &kp LA(PT_N4)                  &trans         &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP
-&trans  &trans     &trans     &trans         &trans             &kp LA(PT_N3)                  &kp RIGHT_ALT  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN  &trans
-&trans  &kp LG(R)  &kp LG(N)  &kp LG(T)      &kp LG(W)          &kp LG(Q)      &trans  &trans  &key_repeat    &mkp LCLK       &mkp RCLK       &mkp MCLK        &trans         &trans
-                              &trans         &trans             &trans         &trans  &trans  &trans         &trans          &to 0
+        &kp F2     &kp LG(F)  &kp LG(LS(L))  &kp LA(PT_PERIOD)  &kp LA(PT_N4)                  &trans             &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP
+&trans  &trans     &trans     &trans         &trans             &kp LA(PT_N3)                  &kp RIGHT_ALT      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN    &trans
+&trans  &kp LG(R)  &kp LG(N)  &kp LG(T)      &kp LG(W)          &kp LG(Q)      &trans  &trans  &kp RIGHT_CONTROL  &mkp LCLK       &mkp RCLK       &mkp MCLK        &kp RIGHT_SHIFT  &trans
+                              &trans         &trans             &trans         &trans  &trans  &trans             &trans          &trans
             >;
 
             label = "Navigation";
@@ -264,7 +276,7 @@
         &kp PT_LEFT_BRACKET               &kp PT_RIGHT_BRACKET             &kp PT_LEFT_PARENTHESIS              &kp PT_RIGHT_PARENTHESIS                &kp PT_EXCL                       &trans           &kp PT_ACUTE     &kp PT_TILDE     &kp PT_CARET     &kp PT_GRAVE
 &trans  &left_hand_hm LEFT_SHIFT PT_PLUS  &left_hand_hm LEFT_ALT PT_MINUS  &left_hand_hm LEFT_COMMAND PT_EQUAL  &left_hand_hm LEFT_CONTROL PT_ASTERISK  &kp PT_SLASH                      &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4  &trans
 &trans  &kp PT_LEFT_BRACE                 &kp PT_RIGHT_BRACE               &kp PT_LESS_THAN                     &kp PT_GREATER_THAN                     &kp PT_BACKSLASH  &trans  &trans  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans
-                                                                           &trans                               &trans                                  &trans            &trans  &trans  &trans           &trans           &to 0
+                                                                           &trans                               &trans                                  &trans            &trans  &trans  &trans           &trans           &trans
             >;
 
             label = "Math";
